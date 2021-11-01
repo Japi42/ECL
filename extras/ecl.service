@@ -1,0 +1,17 @@
+[Unit]
+Description=Emulator Control Labels (ECL)
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+User=pi
+ExecStart=/home/pi/emu-control-labels/emu-control-labels/ecl.py -c /home/pi/.ecl/ecl-config.xml -l
+KillMode=process
+SendSIGHUP=no
+
+[Install]
+WantedBy=multi-user.target
+

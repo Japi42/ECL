@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main-config>
+  <miscDetails>
+  </miscDetails>
+  
+  <displays>
+    <display id="p1_button1" width="96" height="64" color="1">
+      <driver type="BlinkaSPI" spi_adaptor="FT232H" subtype="SSD1331" rotation="0" cs_pin="C0" dc_pin="C1" reset_pin="None" baudrate="24000000"/>
+    </display>
+    <display id="p1_button2" width="96" height="64" color="1">
+      <driver type="BlinkaSPI" spi_adaptor="FT232H" subtype="SSD1331" rotation="0" cs_pin="C3" dc_pin="C1" reset_pin="None" baudrate="24000000"/>
+    </display>
+    <display id="p1_button3">
+      <driver type="TextOut"/>
+    </display>
+    <display id="p1_button4">
+      <driver type="TextOut"/>
+    </display>
+  </displays>
+  
+  <ledDevices>
+    <ledDevice type="pacdrive" board="1" umtool="/usr/local/bin/umtool">
+      <led pin="1" id="p1_button1"/>
+      <led pin="2" id="p1_button2"/>
+      <led pin="16" id="p1_button3"/>
+      <led pin="15" id="p1_button4"/>
+    </ledDevice>
+
+    <ledDevice type="pacdrive" board="2">
+      <led pin="1" id="p1_start"/>
+      <led pin="2" id="p2_start"/>
+    </ledDevice>
+  </ledDevices>
+
+  <font_paths>
+    <path path="~/fonts/"/>
+  </font_paths>
+
+  <fonts>
+    <default name="Jelle_Roman.ttf" size="16" index="0"/>
+  </fonts>
+
+  <emulators>
+    <emulator type="MAME">
+      <config_dir path="~/.mame/cfg/"/>
+      <controls>
+        <control controlid="p1_button1" emu_control="JOYCODE_1_BUTTON1"/>
+        <control controlid="p1_button2" emu_control="JOYCODE_1_BUTTON2"/>
+        <control controlid="p1_button3" emu_control="JOYCODE_1_BUTTON3"/>
+        <control controlid="p1_button4" emu_control="JOYCODE_1_BUTTON4"/>
+      </controls>
+    </emulator>
+
+    <emulator type="AttractMode">
+      <config_dir path=""/>
+      <controls>
+        <control controlid="p1_button1" emu_control="Joy0 Button0"/>
+        <control controlid="p1_button2" text="Back"/>
+      </controls>
+    </emulator>
+  </emulators>
+
+</main-config>
+

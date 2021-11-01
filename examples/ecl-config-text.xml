@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main-config>
+  <miscDetails>
+  </miscDetails>
+  
+  <controls>
+  	<control id="p1_button1">
+      <display id="p1_button1" type="TextOut"/>
+      <led device_id="to-1" pin="1" id="p1_button1"/>
+  	</control>
+  	<control id="p1_button2">
+      <display id="p1_button2" type="TextOut"/>
+      <led device_id="to-1" pin="2" id="p1_button2"/>
+  	</control>
+  	<control id="p1_button3">
+      <display id="p1_button3" type="TextOut"/>
+      <led device_id="to-1" pin="3" id="p1_button3"/>
+  	</control>
+  	<control id="p1_button4">
+      <display id="p1_button4" type="TextOut"/>
+      <led device_id="to-1" pin="4" id="p1_button4"/>
+  	</control>
+  	<control id="p1_button5">
+      <display id="p1_button5" type="TextOut"/>
+      <led device_id="to-1" pin="5" id="p1_button5"/>
+  	</control>
+  	<control id="p1_button6">
+      <display id="p1_button6" type="TextOut"/>
+      <led device_id="to-1" pin="6" id="p1_button6"/>
+  	</control>
+  	<control id="P1_DIAL">
+      <led device_id="to-1" pin="14" id="led_p1_dial"/>
+  	</control>
+  	<control id="P1_JOYSTICK">
+      <led device_id="to-1" pin="15" id="led_p1_j"/>
+  	</control>
+  	<control id="P2_JOYSTICK">
+      <led device_id="to-1" pin="16" id="led_p2_j"/>
+  	</control>
+  	
+  </controls>
+  
+  <ledDevices>
+    <ledDevice id="to-1" type="textout" board="1"/>
+<!-- 
+    <ledDevice id="pd-1" type="pacdrive" board="2" umtool="/usr/local/bin/umtool"/>
+    -->
+  </ledDevices>
+
+  <fonts>
+    <default name="Jelle_Roman.ttf" size="16" index="0"/>
+  </fonts>
+
+  <emulators>
+    <emulator type="MAME">
+      <config_dir path="/home/jpimble/mame-cab-stuff/cfg/.mame"/>
+	  <controls>
+        <control controlid="p1_button1" emu_control="JOYCODE_1_BUTTON1"/>
+        <control controlid="p1_button2" emu_control="JOYCODE_1_BUTTON2"/>
+        <control controlid="p1_button3" emu_control="JOYCODE_1_BUTTON3"/>
+        <control controlid="p1_button4" emu_control="JOYCODE_1_BUTTON4"/>
+        <control controlid="p1_button5" emu_control="JOYCODE_1_BUTTON5"/>
+        <control controlid="p1_button6" emu_control="JOYCODE_1_BUTTON6"/>
+        <control controlid="P1_DIAL" emu_control="P1_DIAL"/>
+        <control controlid="P1_JOYSTICK" emu_control="P1_JOYSTICK"/>
+        <control controlid="P2_JOYSTICK" emu_control="P2_JOYSTICK"/>
+	  </controls>
+    </emulator>
+
+    <emulator type="AttractMode">
+      <config_dir path=""/>
+	  <controls>
+        <control controlid="p1_button1" emu_control="Joy0 Button0"/>
+        <control controlid="p1_button2" text="Back"/>
+	  </controls>
+    </emulator>
+  </emulators>
+
+</main-config>
+

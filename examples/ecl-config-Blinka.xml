@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main-config>
+  <miscDetails>
+  </miscDetails>
+
+  <controls>
+    <control id="p1_button1">
+      <display id="p1_button1" type="BlinkaSPI" spi_adaptor="FT232H" driver_chip="ssd1351" rotation="180" cs_pin="C0" dc_pin="D5" reset_pin="None" baudrate="2000000"/>
+  	</control>
+  </controls>
+
+  <fonts>
+    <default name="Jelle_Roman.ttf" size="16" index="0"/>
+  </fonts>
+
+  <emulators>
+    <emulator type="MAME">
+      <config_dir path=""/>
+      <controls>
+        <control controlid="p1_button1" emu_control="JOYCODE_1_BUTTON1"/>
+      </controls>
+    </emulator>
+
+    <emulator type="AttractMode">
+      <config_dir path=""/>
+	  <controls>
+        <control controlid="p1_button1" emu_control="Joy0 Button0"/>
+        <control controlid="p1_button2" text="Back"/>
+	  </controls>
+    </emulator>
+  </emulators>
+
+</main-config>
+
