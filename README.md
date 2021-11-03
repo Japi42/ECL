@@ -13,9 +13,25 @@ The script is fed in the emulator and game name (either via the command line, or
     sudo apt-get install python3-pil python3-pip
     pip3 install adafruit-circuitpython-rgb-display
 
+## Pre-requisites (luma):
+
+    sudo apt-get install python3-pil python3-pip
+    pip3 install luma
+
 ## Compatiable hardware:
 
-It has only been tested with SSD1331 displays, driven by either a raspberry pi, or an adafruit FT232H USB-to-SPI adapter.  In theory it should work with any SPI or I2C display with some minor changes.  
+It has only been tested with SSD1331 displays, driven by either a raspberry pi or an adafruit FT232H USB-to-SPI adapter.  In theory it should work with any SPI or I2C display with some minor changes.  
+
+## Fonts
+
+Fonts are not distributed, due to licensing complexities.  All of the fonts referenced in the configuration files are free for personal use, they just need to be downloaded and placed in the appropriate directory (as referenced in the font_path in the config file).  The currently used fonts are:
+
+Jellee-Roman.ttf (Default font): <https://www.1001fonts.com/jellee-font.html>
+BravoRG.otf (SF2, etc): <https://www.1001fonts.com/bravo-font.html>
+Eurostile-Bol.otf (Asteroids):
+Goudy Medieval Alternate.ttf (D&D, Joust): <https://www.1001fonts.com/goudy-font.html>
+MumboSSK Bold.ttf (Asteriods Deluxe): <https://ufonts.com/fonts/mumbossk-bold.html> (Needs to be renamed)
+computerfont.ttf (Defender): <https://www.dafont.com/computerfont.font>
 
 ## Warnings:
 
