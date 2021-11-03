@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main-config>
+  <miscDetails>
+  </miscDetails>
+  <controls>
+    <control id="p1_button1">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="4" rst_pin="25"/>
+      <led device_id="pd-2" pin="1" id="led_p1_b1"/>
+    </control>
+    <control id="p1_button2">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="22"/>
+      <led device_id="pd-2" pin="2" id="led_p1_b2"/>
+    </control>
+    <control id="p1_button3">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="23"/>
+      <led device_id="pd-2" pin="3" id="led_p1_b3"/>
+    </control>
+    <control id="p1_button4">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="17"/>
+      <led device_id="pd-2" pin="4" id="led_p1_b4"/>
+    </control>
+    <control id="p1_button5">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="18"/>
+      <led device_id="pd-2" pin="5" id="led_p1_b5"/>
+    </control>
+    <control id="p1_button6">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="27"/>
+      <led device_id="pd-2" pin="6" id="led_p1_b6"/>
+    </control>
+    <control id="p2_button1">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="13"/>
+      <led device_id="pd-1" pin="1" id="led_p2_b1"/>
+    </control>
+    <control id="p2_button2">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="16"/>
+      <led device_id="pd-1" pin="2" id="led_p2_b2"/>
+    </control>
+    <control id="p2_button3">
+      <display type="LumaSPI" subtype="SSD1331" rotation="0" cs_pin="20"/>
+      <led device_id="pd-1" pin="3" id="led_p2_b3"/>
+    </control>
+    <control id="p2_button4">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="12"/>
+      <led device_id="pd-1" pin="4" id="led_p2_b4"/>
+    </control>
+    <control id="p2_button5">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="19"/>
+      <led device_id="pd-1" pin="5" id="led_p2_b5"/>
+    </control>
+    <control id="p2_button6">
+      <display type="LumaSPI" subtype="SSD1331" rotation="180" cs_pin="21"/>
+      <led device_id="pd-1" pin="6" id="led_p2_b6"/>
+    </control>
+    <control id="P1_DIAL">
+      <led device_id="pd-1" pin="10" id="led_p1_dial"/>
+    </control>
+    <control id="P1_TRACKBALL">
+      <led device_id="pd-2" pin="10" id="led_p1_dial"/>
+    </control>
+    <control id="P1_JOYSTICK">
+      <led device_id="pd-2" pin="9" id="led_p1_j"/>
+    </control>
+    <control id="P2_JOYSTICK">
+      <led device_id="pd-1" pin="9" id="led_p2_j"/>
+    </control>
+    <control id="P1_START">
+      <led device_id="pd-2" pin="8" id="led_p1_j"/>
+    </control>
+    <control id="P2_START">
+      <led device_id="pd-1" pin="8" id="led_p2_j"/>
+    </control>
+  </controls>
+
+  <ledDevices>
+    <ledDevice id="pd-1" type="pacdrive" board="1" umtool="/usr/local/bin/umtool"/>
+    <ledDevice id="pd-2" type="pacdrive" board="2" umtool="/usr/local/bin/umtool"/>
+  </ledDevices>
+
+  <font_paths>
+     <path path="/home/pi/fonts"/>
+  </font_paths>
+
+  <fonts>
+    <default name="Jelle_Roman.ttf" size="16" index="0"/>
+  </fonts>
+
+  <emulators>
+    <emulator type="MAME">
+      <config_dir path="/home/pi/.mame/cfg/"/>
+      <controls>
+        <control controlid="p1_button1" emu_control="JOYCODE_1_BUTTON1"/>
+        <control controlid="p1_button2" emu_control="JOYCODE_1_BUTTON2"/>
+        <control controlid="p1_button3" emu_control="JOYCODE_1_BUTTON3"/>
+        <control controlid="p1_button4" emu_control="JOYCODE_1_BUTTON4"/>
+        <control controlid="p1_button5" emu_control="JOYCODE_1_BUTTON5"/>
+        <control controlid="p1_button6" emu_control="JOYCODE_1_BUTTON6"/>
+        <control controlid="p2_button1" emu_control="JOYCODE_2_BUTTON1"/>
+        <control controlid="p2_button2" emu_control="JOYCODE_2_BUTTON2"/>
+        <control controlid="p2_button3" emu_control="JOYCODE_2_BUTTON3"/>
+        <control controlid="p2_button4" emu_control="JOYCODE_2_BUTTON4"/>
+        <control controlid="p2_button5" emu_control="JOYCODE_2_BUTTON5"/>
+        <control controlid="p2_button6" emu_control="JOYCODE_2_BUTTON6"/>
+      </controls>
+    </emulator>
+
+    <emulator type="AttractMode">
+      <config_dir path=""/>
+      <controls>
+        <control controlid="p1_button1" emu_control="Joy0 Button0"/>
+        <control controlid="p1_button2" text="Back"/>
+      </controls>
+    </emulator>
+  </emulators>
+
+</main-config>
+
