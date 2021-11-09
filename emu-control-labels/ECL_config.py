@@ -81,6 +81,7 @@ class ECL_config:
         emus = root.findall("./emulators/emulator")
         for emu in emus:
             emu_type = emu.attrib.get("type")
+            emu_id = emu.attrib.get("id")
             ec = None
             
             if emu_type == "MAME":
@@ -97,8 +98,8 @@ class ECL_config:
                     ec.add_control_mapping(controlid, emu_control_id)
                     print("ECL Control " + controlid + " is " + emu_type + " button " + emu_control_id)
                 
-                self.emulators[emu_type] = ec
-                print("Added emulator " + emu_type)
+                self.emulators[emu_id] = ec
+                print("Added emulator " + emu_id + "of type " + emu_type)
 
     def display_factory(self, options):
         """Create a Display object"""
