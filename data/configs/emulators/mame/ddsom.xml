@@ -4,7 +4,7 @@
    <game romname="ddsom" gamename="Dungeons &amp; Dragons: Shadow over Mystara (Euro 960619)" numPlayers="4" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls font="Goudy Medieval Alternate.ttf" font_size="35">
+      <controls font="Goudy Medieval Alternate.ttf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

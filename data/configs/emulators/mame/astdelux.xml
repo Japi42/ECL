@@ -4,7 +4,7 @@
    <game romname="astdelux" gamename="Asteroids Deluxe (rev 3)">
       <miscDetails>
 		</miscDetails>
-      <controls font="MumboSSK Bold.ttf" font_size="28">
+      <controls font="MumboSSK Bold.ttf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

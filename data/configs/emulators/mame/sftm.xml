@@ -4,7 +4,7 @@
    <game romname="sftm" gamename="Street Fighter: The Movie (v1.12)" numPlayers="2" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls font="BravoRG.otf" font_size="30">
+      <controls font="BravoRG.otf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

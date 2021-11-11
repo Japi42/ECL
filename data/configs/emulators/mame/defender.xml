@@ -5,7 +5,7 @@
       <miscDetails>
  Joystick is on left side of control panel with reverse button the the right of it so it can be hit with thumb. Fire and thrust are on right side of control panel with smart bomb, and hyperspace to the left in a 45 degree angle.  In mame you can turn on cheat mode and the controls are automatically re-mapped so that the game is quite playable on a standard 8way joystick.
 		</miscDetails>
-      <controls font="Computerfont.ttf" color="#ffffff" font_size="27">
+      <controls font="Computerfont.ttf" color="#ffffff">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

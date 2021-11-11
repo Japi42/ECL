@@ -5,7 +5,7 @@
       <miscDetails>
 This game is essentially a clone of sf2.  Only one or two chips where changed and it has the same layout.  
 		</miscDetails>
-     <controls font="BravoRG.otf" font_size="30">
+     <controls font="BravoRG.otf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

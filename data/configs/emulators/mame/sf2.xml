@@ -4,7 +4,7 @@
    <game romname="sf2" gamename="Street Fighter II: The World Warrior (World 910522)" numPlayers="2" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls font="BravoRG.otf" font_size="30">
+      <controls font="BravoRG.otf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

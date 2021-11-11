@@ -4,7 +4,7 @@
    <game romname="joust" gamename="Joust (White/Green label)" numPlayers="2" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls font="Goudy Medieval Alternate.ttf" font_size="35">
+      <controls font="Goudy Medieval Alternate.ttf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
