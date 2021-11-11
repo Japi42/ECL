@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+'''
+A script for generating a report on the buttons mappings defined in the ECL 
+config file for a specific game, or for all the games for an emulator.  
+
+Optionally takes in a list of games to generate a report for, useful for 
+tracking down games without a configuration file.  
+
+Currently just outputs Player 1 buttons 1-6.
+
+@author: Japi42
+'''
 
 from ECL_config import ECL_config
 from ECL_config import main_config
@@ -9,9 +20,10 @@ import argparse
 import sys
 import os
 import re
+import pathlib
 
 def getOptions(args=sys.argv[1:]):
-    parser = argparse.ArgumentParser(description="Parses command.")
+    parser = argparse.ArgumentParser(description="Generates a report on the buttons for a game.")
     parser.add_argument("-g", "--game", required=False, help="Game to display.")
     parser.add_argument("-e", "--emulator", required=True, help="Emulator.")
     parser.add_argument("-f", "--romlistfile", required=False, help="ROM list file.")
@@ -51,6 +63,9 @@ def directoryRomList(cfg_directory):
 options = getOptions(sys.argv[1:])
 
 main_config.data_directory = "/tmp/data"
+my_path = pathlib.Path(__file__).parent.absolute()
+
+main_config.data_directory = str(my_path.parent) + "/data"
 
 if options.romlistfile is not None:
     rom_list = loadRomList(options.romlistfile)

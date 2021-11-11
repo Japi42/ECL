@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+'''
+A script for creating ECL config files from a controls.xml file and Mame.xml file.  
+
+@author: Japi42
+'''
 
 from Emulators import Emu_config
 from Emulators.MAME import MAME_game_config
@@ -10,7 +15,7 @@ import argparse
 import sys
 
 def getOptions(args=sys.argv[1:]):
-    parser = argparse.ArgumentParser(description="Parses command.")
+    parser = argparse.ArgumentParser(description="Convert controls.xml into ECL config files.")
     parser.add_argument("-g", "--game", required=False, help="Game to convert.")
     parser.add_argument("-c", "--controlsfile", required=True, help="Controls.xml file.")
     parser.add_argument("-x", "--mamexmlfile", required=False, help="Mame.xml file.")
