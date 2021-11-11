@@ -8,6 +8,10 @@ The easiest way to use ECL is by setting up a Raspberry Pi Zero-W as a controlle
 * A pile of 6-pin dupont cables (female-to-female)
 * A pile of 1-pin dupont cables (female-to-female)
 
+## Pi setup
+
+You need to enable the SPI interface on the pi.  This can be done in "raspi-config", under "Interfacing options"
+
 ## Wiring
 
 The HiLetgo 0.95" 7-pin 65k SPI SSD1331 OLED Display is what was used during development.   

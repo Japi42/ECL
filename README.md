@@ -16,11 +16,11 @@ The script is fed in the emulator and game name (either via the command line, or
 ## Pre-requisites (luma):
 
     sudo apt-get install python3-pil python3-pip
-    pip3 install luma
+    pip3 install luma.oled
 
 ## Compatiable hardware:
 
-It has only been tested with SSD1331 displays, driven by either a raspberry pi or an adafruit FT232H USB-to-SPI adapter.  In theory it should work with any SPI or I2C display with some minor changes.  
+It has only been tested with SSD1331 displays, driven by either a raspberry pi or an adafruit FT232H USB-to-SPI adapter.  In theory it should work with any SPI or I2C display with some minor changes. 
 
 ## Fonts
 

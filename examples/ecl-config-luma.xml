@@ -85,7 +85,7 @@
   </fonts>
 
   <emulators>
-    <emulator type="MAME">
+    <emulator id="mame" type="MAME">
       <config_dir path="/home/pi/.mame/cfg/"/>
       <controls>
         <control controlid="p1_button1" emu_control="JOYCODE_1_BUTTON1"/>
@@ -103,7 +103,7 @@
       </controls>
     </emulator>
 
-    <emulator type="AttractMode">
+    <emulator id="am" type="AttractMode">
       <config_dir path=""/>
       <controls>
         <control controlid="p1_button1" emu_control="Joy0 Button0"/>
