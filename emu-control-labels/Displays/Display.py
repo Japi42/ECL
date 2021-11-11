@@ -35,7 +35,7 @@ class Display:
 
     def calc_max_font_size(self, text, font_name=None):
 
-        for font_size in range(40, 1, -1):
+        for font_size in range(80, 1, -1):
             font = self.get_font(font_name, font_size)
 
             (text_width, text_height) = self.draw.textsize(text, font) 

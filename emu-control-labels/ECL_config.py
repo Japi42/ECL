@@ -132,9 +132,11 @@ class ECL_config:
             rotation = options.get("rotation")
             if rotation is not None:
                 rotation = int(rotation)
+
+            subtype = options.get("subtype")
                      
             from Displays.LumaSPI import LumaSPI
-            return LumaSPI(cs=cs_pin, rst=rst_pin, rotation=rotation)
+            return LumaSPI(cs=cs_pin, rst=rst_pin, rotation=rotation, subtype=subtype)
 
         if driver_type == "TextOut":
             from Displays.TextOut import TextOut
