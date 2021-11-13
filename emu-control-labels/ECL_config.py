@@ -158,8 +158,19 @@ class ECL_config:
             umtool = options.get("umtool")
             
             return PacDrive(board=board, umtool=umtool)
+        elif driver_type == "PWMServoBoard":
+            from LedDevices.PWMServoBoard import PWMServoBoard
 
-        if driver_type == "textout":
+            address = int(options.get("address"))
+            
+            return PWMServoBoard(address=address)
+        elif driver_type == "LedAW9523":
+            from LedDevices.LedAW9523 import LedAW9523
+
+            address = int(options.get("address"))
+            
+            return LedAW9523(address=address)
+        elif driver_type == "textout":
             from LedDevices.TextOut import TextOut
             
             return TextOut()
