@@ -32,6 +32,7 @@ Fonts are not distributed, due to licensing complexities.  All of the fonts refe
 * Goudy Medieval Alternate.ttf (D&D, Joust): <https://www.1001fonts.com/goudy-font.html>
 * MumboSSK Bold.ttf (Asteriods Deluxe): <https://ufonts.com/fonts/mumbossk-bold.html> (Needs to be renamed)
 * computerfont.ttf (Defender): <https://www.dafont.com/computerfont.font>
+* RacingSansOne-Regular.ttf (Outrun): <https://www.1001fonts.com/racing-sans-one-font.html>
 
 ## Warnings:
 
