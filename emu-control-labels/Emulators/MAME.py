@@ -29,22 +29,28 @@ class MAME_Config(Emu_config):
         return self.game_configs[game_id]
     
     def lookup_control_mapping(self, game_id, control_id):
+
+# control_id is the physical control id, from the ecl-config.xml file
         
         self.load_game_config(game_id)
 
-# Apply emulator specific mapping (control to key code) 
-        
+# Apply emulator specific mapping (physical control to key code) 
+# key code (emu_control_id) is something like "JOYCODE_1_BUTTON1"
+       
         emu_control_id = self.control_mappings.get(control_id)
         if emu_control_id is None:
             emu_control_id = control_id
 
-# Apply game specific mapping (keycode to control)
+# Apply game specific mapping (keycode to MAME control)
         
         mame_game_cfg = self.game_configs[game_id]
         if mame_game_cfg != None:
             mame_ctrlr_cfg = mame_game_cfg.game_ctrlr_config
         
-        # check game specific config file
+        # check game specific MAME config file
+        # if no game specific MAME config file exists, this will use the 
+        # default mappings
+        # "control" will be the id of the control (eg P1_BUTTON1)
         
         if mame_ctrlr_cfg != None:
             control = mame_ctrlr_cfg.control_mappings.get(emu_control_id)
@@ -52,7 +58,7 @@ class MAME_Config(Emu_config):
                 return control
         
         # check default config
-
+ 
         if self.default_cfg != None:
             control = self.default_cfg.control_mappings.get(emu_control_id)
             if control != None:
@@ -63,7 +69,7 @@ class MAME_Config(Emu_config):
         control = self.empty_cfg.control_mappings.get(emu_control_id)
         if control != None:
             return control
-        
+
         return control_id
         
 class MAME_game_config(Emu_game_config):
@@ -127,5 +133,8 @@ class MAME_ctrlr_config:
         self.control_mappings['JOYCODE_2_BUTTON6'] = "P2_BUTTON6"
         self.control_mappings['JOYCODE_2_BUTTON7'] = "P2_BUTTON7"
         self.control_mappings['JOYCODE_2_BUTTON8'] = "P2_BUTTON8"
+        self.control_mappings['ECL_P1_SHIFT_UP'] = "ECL_P1_SHIFT_UP"
+        self.control_mappings['ECL_P1_SHIFT_DOWN'] = "ECL_P1_SHIFT_DOWN"
+        self.control_mappings['ECL_P1_GEAR'] = "ECL_P1_GEAR"
         
 

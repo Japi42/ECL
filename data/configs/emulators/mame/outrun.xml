@@ -5,7 +5,7 @@
       <miscDetails>
 The shifter is hard-coded to the space-bar to avoid conflicts.  
 		</miscDetails>
-      <controls>
+      <controls font="RacingSansOne-Regular.ttf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
@@ -14,6 +14,16 @@ The shifter is hard-coded to the space-bar to avoid conflicts.
          </control>
          <control name="P1_BUTTON1">
             <text lang="en_us">High / Low</text>
+         </control>
+         <control name="ECL_P1_SHIFT_DOWN">
+            <text lang="en_us" color="#0000ff">Low</text>
+         </control>
+         <control name="ECL_P1_SHIFT_UP">
+            <text lang="en_us" color="#0000ff">High</text>
+         </control>
+         <control name="ECL_P1_GEAR">
+            <text id="1" lang="en_us" color="#ffffff">Low</text>
+            <text id="2" lang="en_us" color="#ffffff">High</text>
          </control>
          <control name="P1_PADDLE">
             <text lang="en_us">Left</text>
