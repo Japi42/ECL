@@ -7,7 +7,7 @@ Created on Jan 19, 2021
 import json
 import sys
 import subprocess
-from LedDevices.LedDevice import LedDevice
+from LedDevices.LedDevice import LedDevice, LedOutputState
 
 class PacDrive(LedDevice):
 
@@ -20,14 +20,15 @@ class PacDrive(LedDevice):
             self.umtool = "/usr/local/bin/umtool"
 
     def updateLEDs(self):
-        self.run_umtool()
+        with self.condition:
+            self.run_umtool()
     
     def build_led_list(self):
         leds = []
         
         for output in self.outputs:
             print("Found output " + str(output.pin))
-            if output.state == 1:
+            if output.state != LedOutputState.Off:
                 leds.append(output.pin)
         
         return leds

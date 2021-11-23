@@ -21,7 +21,7 @@ import busio
 # Import the PCA9685 module.
 from adafruit_pca9685 import PCA9685
 
-from LedDevices.LedDevice import LedDevice
+from LedDevices.LedDevice import LedDevice, LedOutputState
 
 class PWMServoBoard(LedDevice):
 
@@ -35,9 +35,10 @@ class PWMServoBoard(LedDevice):
         self.pca.frequency = 1000 
 
     def updateLEDs(self):
-        for output in self.outputs:
-            if output.state == 1:
-                 self.pca.channels[output.pin].duty_cycle = 0x0ffff
-            else:
-                 self.pca.channels[output.pin].duty_cycle = 0x0
+        with self.condition:
+            for output in self.outputs:
+                if output.state != LedOutputState.Off:
+                     self.pca.channels[output.pin].duty_cycle = 0x0ffff
+                else:
+                     self.pca.channels[output.pin].duty_cycle = 0x0
 

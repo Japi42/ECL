@@ -15,7 +15,7 @@ import busio
 import board
 import adafruit_aw9523
 
-from LedDevices.LedDevice import LedDevice
+from LedDevices.LedDevice import LedDevice, LedOutputState
 
 class LedAW9523(LedDevice):
 
@@ -30,9 +30,10 @@ class LedAW9523(LedDevice):
         self.aw.directions = 0x0FFFF 
 
     def updateLEDs(self):
-        for output in self.outputs:
-            if output.state == 1:
-                 self.aw.set_constant_current(output.pin, 0x0ff)
-            else:
-                 self.aw.set_constant_current(output.pin, 0x000)
+        with self.condition:
+            for output in self.outputs:
+                if output.state != LedOutputState.Off:
+                     self.aw.set_constant_current(output.pin, 0x0ff)
+                else:
+                     self.aw.set_constant_current(output.pin, 0x000)
 

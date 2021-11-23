@@ -4,7 +4,7 @@ Created on Jan 19, 2021
 @author: Japi42
 '''
 
-from LedDevices.LedDevice import LedDevice
+from LedDevices.LedDevice import LedDevice, LedOutputState
 
 class TextOut(LedDevice):
 
@@ -12,6 +12,8 @@ class TextOut(LedDevice):
         LedDevice.__init__(self)
 
     def updateLEDs(self):
-        for output in self.outputs:
-            if output.state == 1:
-                print("LED " + str(output.pin) + " enabled")
+        with self.condition:
+            print("LED Status:")
+            for output in self.outputs:
+                if output.state != LedOutputState.Off:
+                    print("LED " + str(output.pin) + " enabled")

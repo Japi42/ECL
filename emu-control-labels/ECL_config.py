@@ -48,7 +48,7 @@ class ECL_config:
             if dev is not None:
                 id = led_dev.attrib["id"]
                 self.led_devices[id] = dev
-        
+
         # Create all the physical controls (with displays and LEDs)
         
         control_tags = root.findall("./controls/control")
@@ -70,6 +70,11 @@ class ECL_config:
                 led_device_id = led_tag.attrib["device_id"]
                 pin = int(led_tag.attrib["pin"])
                 led = self.led_devices[led_device_id].addLED(id, pin)
+
+                alwayson = led_tag.attrib.get("alwayson")
+                if alwayson == "1":
+                    led.setAlwaysOn()
+
                 control.led = led
                 
             print("Adding control " + id)
