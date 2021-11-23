@@ -29,6 +29,9 @@ main_config.load_xml_config(configfile = options.configfile)
 # Start the Flask server, if we are listening for updates
 
 if options.listen:
+    from Mappers import MapperController
+    MapperController.startup()
+
     from Rest import ECLRestServer
     ECLRestServer.startup()
 

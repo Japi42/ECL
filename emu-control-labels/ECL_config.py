@@ -17,6 +17,9 @@ class ECL_config:
         self.led_devices = {}
         self.controls = {}
         self.emulators = {}
+        self.inputs = {}
+        self.outputs = {}
+        self.mappers = {}
         
         my_path = pathlib.Path(__file__).parent.absolute()
         self.data_directory = str(my_path.parent) + "/data"
@@ -106,6 +109,70 @@ class ECL_config:
                 self.emulators[emu_id] = ec
                 print("Added emulator " + emu_id + "of type " + emu_type)
 
+# Create the inputs
+
+        inputs = root.findall("./inputs/input")
+        for input_elem in inputs:
+            input_type = input_elem.attrib.get("type")
+            input_id = input_elem.attrib.get("id")
+            input = None
+            
+            if input_type == "gpio":
+                input_pin = input_elem.attrib.get("pin")
+                from Inputs.GPIOInput import GPIOInput
+                input = GPIOInput(pin=input_pin)
+            elif input_type == "timer":
+                interval = float(input_elem.attrib.get("interval"))/1000
+                from Inputs.TimerInput import TimerInput
+                input = TimerInput(interval=interval)
+
+            if input is not None:
+                self.inputs[input_id] = input
+                print("ECL input " + input_id + " added")
+
+# Create the outputs
+
+        outputs = root.findall("./outputs/output")
+        for output_elem in outputs:
+            output_type = output_elem.attrib.get("type")
+            output_id = output_elem.attrib.get("id")
+            output = None
+            
+            if output_type == "textout":
+                from Outputs.TextOutput import TextOutput
+                output = TextOutput(output_id=output_id)
+            elif output_type == "hidjoy":
+                output_button = output_elem.attrib.get("button")
+                from Outputs.HIDJoyOutput import HIDJoyOutput
+                output = HIDJOYOutput(button=output_button)
+
+            if output is not None:
+                self.outputs[output_id] = output
+                print("ECL output " + output_id + " added")
+
+# Create the mappers
+
+        mappers = root.findall("./mappers/mapper")
+        for mapper_elem in mappers:
+            mapper_type = mapper_elem.attrib.get("type")
+            mapper_id = mapper_elem.attrib.get("id")
+            mapper = None
+
+            if mapper_type == "mirror":
+                input_id = mapper_elem.attrib.get("inputid")
+                output_id = mapper_elem.attrib.get("outputid")
+
+                input = self.inputs[input_id]
+                output = self.outputs[output_id]
+
+                from Mappers.MirrorMapper import MirrorMapper
+                mapper = MirrorMapper(id=output_id, input=input, output=output)
+            
+            if mapper is not None:
+                self.mappers[mapper_id] = mapper
+                print("ECL mapper " + mapper_id + " added")
+
+                
     def display_factory(self, options):
         """Create a Display object"""
         driver_type = options.get("type")
