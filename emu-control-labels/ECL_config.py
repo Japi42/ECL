@@ -143,8 +143,8 @@ class ECL_config:
                 output = TextOutput(output_id=output_id)
             elif output_type == "hidjoy":
                 output_button = output_elem.attrib.get("button")
-                from Outputs.HIDJoyOutput import HIDJoyOutput
-                output = HIDJOYOutput(button=output_button)
+                from Outputs.JoyHIDOutput import JoyHIDOutput
+                output = JoyHIDOutput(output_id, button_num=int(output_button))
 
             if output is not None:
                 self.outputs[output_id] = output
@@ -167,7 +167,10 @@ class ECL_config:
 
                 from Mappers.MirrorMapper import MirrorMapper
                 mapper = MirrorMapper(id=output_id, input=input, output=output)
-            
+            elif mapper_type == "shifter":
+                from Mappers.ShifterMapper import ShifterMapper
+                mapper = ShifterMapper(config_elem=mapper_elem)
+                
             if mapper is not None:
                 self.mappers[mapper_id] = mapper
                 print("ECL mapper " + mapper_id + " added")

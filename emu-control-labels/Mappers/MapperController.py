@@ -12,7 +12,7 @@ from ECL_config import main_config
 condition = threading.Condition()
 
 def startup():
-    ut = threading.Thread(name='UpdateMappersThread', target=updateMappersThread)
+    ut = threading.Thread(name='UpdateMappersThread', target=updateMappersThread, daemon=True)
     ut.start()
 
 def updateMappersThread():
