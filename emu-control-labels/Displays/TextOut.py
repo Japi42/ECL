@@ -9,7 +9,6 @@ class TextOut(Display):
         self.width = 96
         self.height = 64
         self.colors = 65536
-        self.init_draw_context()
 
     def display_text(self, text, font_name=None, font_size=None, color=None):
         print(self.id + ":" + text)

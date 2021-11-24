@@ -1,5 +1,4 @@
 
-from PIL import Image, ImageDraw, ImageFont
 
 class Display:
 
@@ -11,6 +10,8 @@ class Display:
         self.colors = 0
 
     def init_draw_context(self):
+        from PIL import Image, ImageDraw, ImageFont
+
         # Get an image for drawing on, and a drawing context
 
         self.image = Image.new("RGB", (self.width, self.height))
