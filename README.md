@@ -18,6 +18,13 @@ The script is fed in the emulator and game name (either via the command line, or
     sudo apt-get install python3-pil python3-pip
     pip3 install luma.oled
 
+## Pre-requisites (Flask web server)
+    pip3 install requests
+
+## Pre-requisites (Windows, as ECL client):
+    Install python3
+    python -m pip install requests
+
 ## Compatiable hardware:
 
 It has been tested with SSD1331 (96x64) and SSD1351 (128x128) displays, driven by either a raspberry pi or an adafruit FT232H USB-to-SPI adapter.  In theory it should work with any SPI or I2C display with some minor changes. 
