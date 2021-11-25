@@ -9,7 +9,7 @@ import threading
 from Mappers.Mapper import Mapper
 from ECL_config import main_config
 
-class ShifterMapper:
+class ShifterMapper(Mapper):
 
     def __init__(self, config_elem=None):
         Mapper.__init__(self)

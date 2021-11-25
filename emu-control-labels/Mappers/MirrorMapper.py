@@ -8,7 +8,7 @@ import threading
 
 from Mappers.Mapper import Mapper
 
-class MirrorMapper:
+class MirrorMapper(Mapper):
 
     def __init__(self, id, input, output):
         Mapper.__init__(self)
