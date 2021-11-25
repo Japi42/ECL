@@ -33,6 +33,12 @@ The shifter switches are formula 1 style, meaning that they are mounted behind t
          <control name="P1_START">
             <text lang="en_us">Start</text>
          </control>
+         <control name="ECL_P1_SHIFT_DOWN">
+            <text lang="en_us" color="#0000ff">Down</text>
+         </control>
+         <control name="ECL_P1_SHIFT_UP">
+            <text lang="en_us" color="#0000ff">Up</text>
+         </control>
       </controls>
    </game>
 </ecl>

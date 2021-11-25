@@ -9,7 +9,7 @@ class Emu_config:
     def __init__(self):
         self.game_configs = {}
         self.control_mappings = {}
-        self.emulator_id = 'mame'
+        self.emulator_id = 'base'
     
     def add_control_mapping(self, control_id, emu_control_id):
         self.control_mappings[control_id] = emu_control_id
@@ -79,7 +79,9 @@ class Emu_game_config:
                 if 'name' in control.attrib:
                     control_id = control.attrib['name']
                 
-                    c_label = Control_label()
+                    default_text_id = control.attrib.get("default_text_id")
+
+                    c_label = Control_label(default_text_id=default_text_id)
 
                     texts = control.findall("./text")
                     for text in texts:
@@ -91,7 +93,6 @@ class Emu_game_config:
                         font = text.attrib.get("font")
                         font_size = text.attrib.get("font_size")
                         text_id = text.attrib.get("id")
-                        default_id = text.attrib.get("default")
 
                         if font_size is None:
                             font_size = self.font_size
@@ -102,17 +103,14 @@ class Emu_game_config:
                         if color is None:
                             color = default_color
 
-                        if default_id == "1":
-                            default_id = True
-                        else:
-                            default_id = False
-
                         c_label.set_text(text = label_text, width=width, height=height, lang=lang, color=color, 
-                                         font=font, font_size=font_size, text_id=text_id, default=default_id)
+                                         font=font, font_size=font_size, text_id=text_id)
                 
                         self.controls_label[control_id] = c_label
         except Exception as e:
             print("Error loading config: " + filename)
+            import traceback
+            traceback.print_exc()
             print(e)
             pass
     
@@ -177,30 +175,60 @@ class Emu_game_config:
     
 class Control_label:
     
-    def __init__(self, text=None, unverified=None):
+    def __init__(self, text=None, unverified=None,default_text_id=None):
         self.text_labels = {}
         self.image_labels = {}
+        self.default_text_id = default_text_id
         if text is not None:
             self.set_text(text=text, unverified=unverified)
         
     def get_text_label(self, width=None, height=None, lang="en_us", text_id=None):
         key = self.get_text_key(width=width, height=height, lang=lang, text_id=text_id)
+
         if key is not None:
             return self.text_labels[key]
 
         return None
 
     def get_text_key(self, width=None, height=None, lang="en_us", text_id=None):
-        key = self.build_key(width, height, lang, text_id)
+
+        if text_id is None:
+            w_text_id = self.default_text_id
+        else:
+            w_text_id = text_id
+
+# Check for the specific text_id, with dimensions
+            
+        key = self.build_key(width, height, lang, w_text_id)
         if key in self.text_labels:
             return key
 
-        key = self.build_key(lang=lang)
+# Check for the specific text_id, without dimensions
+       
+        key = self.build_key(lang=lang, text_id=w_text_id)
         if key in self.text_labels:
             return key
         
         return None
 
+    def get_default_text_id(self):
+        return self.default_text_id
+    
+    def get_text_ids(self):
+        text_ids = {}
+
+        for key in self.text_labels:
+            k_parts = self.split_key(key)
+            k_width = k_parts[0]
+            k_height = k_parts[1]
+            k_lang = k_parts[2]
+            k_text_id = k_parts[3]
+
+            if k_text_id not in text_ids:
+                text_ids[k_text_id] = k_text_id
+            
+        return text_ids
+    
     def get_default_key(self, width=None, height=None, lang="en_us"):
         key = self.build_key(width, height, lang)
         if key in self.text_labels:
@@ -215,17 +243,11 @@ class Control_label:
     def get_image(self, width=None, height=None, lang="en_us"):
         return None
     
-    def set_text(self, text=None, width=None, height=None, lang="en_us", color=None, font=None, font_size=None, unverified=None, text_id=None, default=False):
+    def set_text(self, text=None, width=None, height=None, lang="en_us", color=None, font=None, font_size=None, unverified=None, text_id=None):
         key = self.build_key(width, height, lang, text_id)
+        print("Adding key " + str(key))
         text_label = Text_label(text=text, width=width, height=height, lang=lang, color=color, font=font, font_size=font_size, unverified=unverified)
         self.text_labels[key] = text_label
-        if text_id is not None:
-            if default:
-                key = self.build_key(width, height, lang)
-                self.text_labels[key] = text_label
-            elif self.get_default_key(width, height, lang) is None:
-                key = self.build_key(width, height, lang)
-                self.text_labels[key] = text_label
             
     def build_key(self, width=None, height=None, lang="en_us", text_id=None):
         key = ""
@@ -250,6 +272,11 @@ class Control_label:
             key = key + "|" + str(text_id)
 
         return key
+
+    def split_key(self, key):
+        parts = key.split("|")
+
+        return parts
     
 class Text_label:
     

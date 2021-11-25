@@ -35,6 +35,16 @@
          <control name="P1_START">
             <text lang="en_us">Start</text>
          </control>
+         <control name="ECL_P1_SHIFT_DOWN">
+            <text lang="en_us" color="#0000ff">Low</text>
+         </control>
+         <control name="ECL_P1_SHIFT_UP">
+            <text lang="en_us" color="#0000ff">High</text>
+         </control>
+         <control name="ECL_P1_GEAR" default_text_id="1">
+            <text id="1" lang="en_us" color="#ffffff">Low</text>
+            <text id="2" lang="en_us" color="#ffffff">High</text>
+         </control>
       </controls>
    </game>
 </ecl>
