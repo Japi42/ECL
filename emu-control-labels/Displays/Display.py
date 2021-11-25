@@ -1,5 +1,4 @@
 
-
 class Display:
 
     font_cache = {}
@@ -63,6 +62,7 @@ class Display:
         
         font = Display.font_cache.get(key)
         if font is None:
+            from PIL import Image, ImageDraw, ImageFont
             try:
                 font = ImageFont.truetype(main_config.font_path + font_name, font_size)
             except Exception as e:
