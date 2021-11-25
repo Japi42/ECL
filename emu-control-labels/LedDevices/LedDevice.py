@@ -70,10 +70,12 @@ class LedOutput:
         self.device = device
         
     def enableLED(self):
-        self.state = LedOutputState.On
+        if self.state != LedOutputState.AlwaysOn:
+            self.state = LedOutputState.On
         
     def disableLED(self):
-        self.state = LedOutputState.Off
+        if self.state != LedOutputState.AlwaysOn:
+            self.state = LedOutputState.Off
 
     def setAlwaysOn(self):
         self.state = LedOutputState.AlwaysOn        
