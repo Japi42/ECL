@@ -73,7 +73,6 @@ class ShifterMapper:
             state = self.shiftup.getState()
 
             if state != self.shiftup_ls:
-                print("Shift up: "+ str(state))
                 self.shiftup_ls = state
                 if state:
                     self.shift_up()
@@ -81,9 +80,41 @@ class ShifterMapper:
             state = self.shiftdown.getState()
 
             if state != self.shiftdown_ls:
-                print("Shift down: " + str(state))
                 self.shiftdown_ls = state
                 if state:
                     self.shift_down()
 
-                
+    def switchGame(self, game=None, emulator=None, mappings=None):
+
+# Get the ECL_GEAR label from the config
+        
+        emu_conf = main_config.emulators[emulator]
+        label = emu_conf.lookup_control_label(game, 'ECL_P1_GEAR')
+
+        # If no gear control for game, turn off output
+
+        if label is None:
+            self.num_gears = 0
+            self.current_gear = 0
+            self.update_outputs()
+            return
+
+# the number of gears is the number of unique IDs
+        
+        text_ids = label.get_text_ids()
+        self.num_gears = len(text_ids)
+
+# The default gear is the default ID for the gear label
+# If that is not defined, use first gear.
+        
+        default_id = label.get_default_text_id()
+        
+        if default_id is not None:
+            self.current_gear = int(default_id)
+        elif self.num_gears > 0 :
+            self.current_gear = 1
+        else:
+            self.current_gear = 0
+
+        self.update_outputs()
+

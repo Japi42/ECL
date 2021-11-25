@@ -15,3 +15,6 @@ class Mapper:
         with self.condition:
             pass
     
+    def switchGame(self, game=None, emulator=None, mappings=None):
+        pass
+    

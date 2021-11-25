@@ -129,6 +129,18 @@ def updateLEDs(game, emulator, mappings):
         led_dev = main_config.led_devices[led_dev_id]
         led_dev.updateLEDs()
 
+def updateMappers(game, emulator, mappings):
+
+# Get the config for the requested emulator
+
+    emu_conf = main_config.emulators[emulator]
+
+# Tell the mappers what game is in use
+
+    for mapper_id in main_config.mappers:
+        mapper = main_config.mappers[mapper_id]
+        mapper.switchGame(game, emulator, mappings)
+        
 def updateControls(game, emulator, mappings=None):
     
     if mappings is None:
@@ -137,3 +149,5 @@ def updateControls(game, emulator, mappings=None):
     updateLEDs(game, emulator, mappings)
     
     updateDisplays(game, emulator, mappings)
+
+    updateMappers(game, emulator, mappings)
