@@ -33,10 +33,10 @@ The 'Horn' button has a picture of a horn on it rather than actual text.
          <control name="P1_PADDLE_EXT">
             <text lang="en_us">Right</text>
          </control>
-         <control name="P1_START">
+         <control name="START1">
             <text lang="en_us">Start</text>
          </control>
-         <control name="P2_START">
+         <control name="START2">
             <text lang="en_us">Start</text>
          </control>
          <control name="ECL_P1_SHIFT_DOWN">

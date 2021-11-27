@@ -26,7 +26,7 @@
          <control name="P1_PEDAL2">
             <text lang="en_us">Brake</text>
          </control>
-         <control name="P1_START">
+         <control name="START1">
             <text lang="en_us">Start</text>
          </control>
          <control name="ECL_P1_SHIFT_DOWN">

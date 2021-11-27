@@ -32,7 +32,7 @@
          <control name="P1_PEDAL">
             <text lang="en_us"/>
          </control>
-         <control name="P1_START">
+         <control name="START1">
             <text lang="en_us">Start</text>
          </control>
          <control name="ECL_P1_SHIFT_DOWN">
