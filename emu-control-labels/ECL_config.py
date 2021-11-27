@@ -9,7 +9,6 @@ import os
 import xml.etree.ElementTree as ET
 import pathlib
 
-
 class ECL_config:
     """Main configuration class for ECL"""
     
@@ -25,7 +24,7 @@ class ECL_config:
         self.data_directory = str(my_path.parent) + "/data"
         self.default_font = "Jellee-Roman.ttf"
         self.font_path = "~/fonts/"
-    
+
     def load_xml_config(self, configfile):
         tree = ET.parse(configfile)
         root = tree.getroot()

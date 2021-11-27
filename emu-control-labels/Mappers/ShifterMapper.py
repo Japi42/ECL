@@ -8,6 +8,7 @@ import threading
 
 from Mappers.Mapper import Mapper
 from ECL_config import main_config
+from Controls import main_controller
 
 class ShifterMapper(Mapper):
 
@@ -26,8 +27,8 @@ class ShifterMapper(Mapper):
     def parse_config(self, config_elem):
 
         self.gearoutputs = []
-        self.num_gears = 5
-        self.current_gear = 1
+        self.num_gears = 0
+        self.current_gear = 0
 
         input_id = config_elem.attrib.get("shiftup")
         self.shiftup = main_config.inputs[input_id]
@@ -45,6 +46,8 @@ class ShifterMapper(Mapper):
         
     def update_outputs(self):
 
+# Update the gear selection outputs (buttons)
+        
         index = 1
         for gear_output in self.gearoutputs:
             if self.current_gear == index:
@@ -54,12 +57,17 @@ class ShifterMapper(Mapper):
 
             index += 1
 
+# Update the current gear display
+
+
+            
     def shift_up(self):
         print("Starting gear is " + str(self.current_gear))
         if self.current_gear < self.num_gears:
             self.current_gear += 1
             print("New gear is " + str(self.current_gear))
             self.update_outputs()
+            main_controller.queueUpdateMultiText("ECL_P1_GEAR", str(self.current_gear))
 
     def shift_down(self):
         print("Starting gear is " + str(self.current_gear))
@@ -67,6 +75,7 @@ class ShifterMapper(Mapper):
             self.current_gear -= 1
             print("New gear is " + str(self.current_gear))
             self.update_outputs()
+            main_controller.queueUpdateMultiText("ECL_P1_GEAR", str(self.current_gear))
 
     def update(self):
         with self.condition:
@@ -116,5 +125,7 @@ class ShifterMapper(Mapper):
         else:
             self.current_gear = 0
 
+        main_controller.queueUpdateMultiText("ECL_P1_GEAR", str(self.current_gear))
+            
         self.update_outputs()
 

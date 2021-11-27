@@ -31,7 +31,7 @@ def lookupControls(game, emulator):
         
     return controlMappings
 
-def updateDisplays(game, emulator, mappings, update_control_id=None):
+def updateDisplays(game, emulator, mappings, multitext_ids, update_control_id=None):
 # Get the config for the requested emulator
 
     emu_conf = main_config.emulators[emulator]
@@ -44,19 +44,24 @@ def updateDisplays(game, emulator, mappings, update_control_id=None):
 
 # skip update if not updating all, and not on the updating display
 
-        if update_control_id is not None and update_control_id != control_id:
-           continue
-
         control = main_config.controls[control_id]
         display = control.display
         if display is None:
             continue
         
         emu_control_id = mappings.get(control_id)
+
+        if update_control_id is not None and update_control_id != emu_control_id:
+           continue
+        
+        if multitext_ids is not None:
+            text_id = multitext_ids.get(emu_control_id)
+        else:
+            text_id = None
         
         label = emu_conf.lookup_control_label(game, emu_control_id)
         if label is not None:
-            text_label = label.get_text_label(width=display.width, height=display.height)
+            text_label = label.get_text_label(width=display.width, height=display.height, text_id=text_id)
             text = text_label.text
             color = text_label.color
             font = text_label.font
@@ -143,13 +148,15 @@ def updateMappers(game, emulator, mappings):
         mapper = main_config.mappers[mapper_id]
         mapper.switchGame(game, emulator, mappings)
         
-def updateControls(game, emulator, mappings=None, update_display_id=None):
+def updateControls(game, emulator, mappings=None, multitext_ids=None, update_display_id=None):
     
     if mappings is None:
         mappings = lookupControls(game, emulator)
         
     updateLEDs(game, emulator, mappings)
     
-    updateDisplays(game, emulator, mappings, update_display_id)
+    updateDisplays(game, emulator, mappings, multitext_ids=multitext_ids, update_control_id=update_display_id)
 
-    updateMappers(game, emulator, mappings)
+    if update_display_id is None:
+        updateMappers(game, emulator, mappings)
+
