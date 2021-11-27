@@ -42,39 +42,58 @@ class Emu_game_config:
     def __init__(self, game_id, emulator_id):
         self.controls_label = {}
         self.misc_details = None
-        self.romname = None
+        self.emulator_id = emulator_id
+        self.romname = game_id
         self.gamename = None
         self.num_players = None
         self.alternating = None
         self.font = None
 
         if game_id is not None:
-            self.load_game_config(main_config.data_directory + "/configs/emulators/" + emulator_id + "/" + game_id + ".xml", game_id)
-    
-    def load_game_config(self, filename, game_id):
+            filename = self.get_config_filename(emulator_id, game_id)
+            self.load_game_config(filename, game_id)
+
+    def get_config_filename(self, emulator_id, game_id):
+        return main_config.data_directory + "/configs/emulators/" + emulator_id + "/" + game_id + ".xml"
+            
+    def load_game_config(self, filename, game_id, clone=False):
         try:
             tree = ET.parse(filename)
             root = tree.getroot()
 
-            self.romname = game_id
-    
             game_root = root.find("./game[@romname='" + game_id + "']")
         
             if game_root is None:
                 return
 
-            self.gamename = game_root.attrib.get("gamename")
-            self.num_players = game_root.attrib.get("numPlayers")
-            self.alternating = game_root.attrib.get("alternating")
+            gamename = game_root.attrib.get("gamename")
+            num_players = game_root.attrib.get("numPlayers")
+            alternating = game_root.attrib.get("alternating")
+            clone_of = game_root.attrib.get("cloneof")
+
+            if clone == False:
+                self.gamename = gamename
+                self.num_players = num_players
+                self.alternating = alternating
+                self.clone_of = clone_of
+                
+# If the game is a clone, load the parent config first (recursivly), then apply the
+# clone-specifc stuff on top of it.
+
+            if clone_of is not None:
+                clone_filename = self.get_config_filename(self.emulator_id, clone_of)
+                self.load_game_config(clone_filename, clone_of, clone=True)
        
             controls_elem = root.find("./game[@romname='" + game_id + "']/controls")
 
+            default_color = None
+            if controls_elem is not None:
+                self.font = controls_elem.attrib.get("font")
+                self.font_size = controls_elem.attrib.get("font_size")
+                default_color = controls_elem.attrib.get("color")
+
             controls = root.findall("./game[@romname='" + game_id + "']/controls/control")
-            
-            self.font = controls_elem.attrib.get("font")
-            self.font_size = controls_elem.attrib.get("font_size")
-            default_color = controls_elem.attrib.get("color")
-            
+                
             for control in controls:
                 if 'name' in control.attrib:
                     control_id = control.attrib['name']
