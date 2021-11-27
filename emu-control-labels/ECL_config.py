@@ -97,6 +97,9 @@ class ECL_config:
                 config_path = cp_elem.attrib["path"]
                 from Emulators.MAME import MAME_Config
                 ec = MAME_Config(config_path=config_path)
+            elif emu_type == "Generic":
+                from Emulators.Generic import Generic_Config
+                ec = Generic_Config()
 
             if ec is not None: 
                 disps = emu.findall("./controls/control")
@@ -107,7 +110,7 @@ class ECL_config:
                     print("ECL Control " + controlid + " is " + emu_type + " button " + emu_control_id)
                 
                 self.emulators[emu_id] = ec
-                print("Added emulator " + emu_id + "of type " + emu_type)
+                print("Added emulator " + emu_id + " of type " + emu_type)
 
 # Create the inputs
 
