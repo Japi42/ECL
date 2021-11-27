@@ -16,7 +16,7 @@ def lookupControls(game, emulator):
 
     emu_conf = main_config.emulators[emulator]
 
-# Loop through all the controls, updating labels
+# Loop through all the controls, finding control mapping
     
     for control_id in main_config.controls:
         control = main_config.controls[control_id]
@@ -31,7 +31,7 @@ def lookupControls(game, emulator):
         
     return controlMappings
 
-def updateDisplays(game, emulator, mappings):
+def updateDisplays(game, emulator, mappings, update_control_id=None):
 # Get the config for the requested emulator
 
     emu_conf = main_config.emulators[emulator]
@@ -41,6 +41,12 @@ def updateDisplays(game, emulator, mappings):
 # Loop through all the controls, updating labels
     
     for control_id in main_config.controls:
+
+# skip update if not updating all, and not on the updating display
+
+        if update_control_id is not None and update_control_id != control_id:
+           continue
+
         control = main_config.controls[control_id]
         display = control.display
         if display is None:
@@ -131,23 +137,19 @@ def updateLEDs(game, emulator, mappings):
 
 def updateMappers(game, emulator, mappings):
 
-# Get the config for the requested emulator
-
-    emu_conf = main_config.emulators[emulator]
-
 # Tell the mappers what game is in use
 
     for mapper_id in main_config.mappers:
         mapper = main_config.mappers[mapper_id]
         mapper.switchGame(game, emulator, mappings)
         
-def updateControls(game, emulator, mappings=None):
+def updateControls(game, emulator, mappings=None, update_display_id=None):
     
     if mappings is None:
         mappings = lookupControls(game, emulator)
         
     updateLEDs(game, emulator, mappings)
     
-    updateDisplays(game, emulator, mappings)
+    updateDisplays(game, emulator, mappings, update_display_id)
 
     updateMappers(game, emulator, mappings)

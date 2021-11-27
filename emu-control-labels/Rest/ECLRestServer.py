@@ -5,72 +5,18 @@ Created on Jan 7, 2021
 '''
 
 from flask import Flask, jsonify, request, json
-from ECL_core import updateControls
 import subprocess
 from ECL_config import main_config
-import threading
 import time
-
-condition = threading.Condition()
-next_game = {}
+from Controls import main_controller
 
 def startup():
-    clearControlsQueue()
-    ut = threading.Thread(name='UpdateControlsThread', target=updateControlsThread)
-    ut.start()
-    app.run(debug=True, threaded=False, use_reloader=False, host='0.0.0.0')
+    main_controller.clearControlsQueue()
+    app.run(debug=True, threaded=False, use_reloader=False, host='0.0.0.0', port='5000')
 
 app = Flask(__name__)
 
-def clearControlsQueue():
-    with condition:
-        next_game['game'] = None
-        next_game['emulator'] = None
-        next_game['mappings'] = None
-        condition.notifyAll()
-        
-def checkControlsUpdate():
-    with condition:
-        if next_game['game'] is not None:
-            return True
-        if next_game['emulator'] is not None:
-            return True
-        if next_game['mappings'] is not None:
-            return True
-        
-    return False
-
-def updateControlsThread():
-
-    while True:
-        game = None
-        emulator = None
-        mappings = None
-        
-        with condition:
-            condition.wait_for(checkControlsUpdate)
-            game = next_game['game']
-            emulator = next_game['emulator']
-            mappings = next_game['mappings']
-            clearControlsQueue()
-
-        if game is not None:
-            updateControls(game, emulator, mappings)
-            
-def queueUpdateControls(game, emulator, mappings):
-    
-    with condition:
-        next_game['game'] = game
-        next_game['emulator'] = emulator
-        next_game['mappings'] = mappings
-
-        condition.notifyAll()
-        
-#@app.route('/ecl/api/v1.0/game', methods=['GET'])
-#def get_tasks():
-#    return jsonify({'tasks': tasks})
-    
-# This only works if we have the button mappings local    
+# Change the control labels to a new game    
 
 @app.route('/ecl/api/v1.0/game', methods=['PUT'])
 def put_game():
@@ -80,12 +26,26 @@ def put_game():
     
     game = content['game']
     emulator = content['emulator']
-    
+   
+    print(str(content)) 
     mappings = content.get('controls')
     
-    queueUpdateControls(game, emulator, mappings)
+    main_controller.queueUpdateControls(game, emulator, mappings)
     return jsonify({'status': 'Good'})
+
+# Change a multi-text control label to a different text
+
+@app.route('/ecl/api/v1.0/control/<id>', methods=['PUT'])
+def put_control_id(id):
+    content = request.json
+ 
+    print("Inbound control change: " + id)
     
+    text_id = content['text_id']
+    
+#    queueUpdateControls(game, emulator, mappings)
+    return jsonify({'status': 'Good'})
+
 # Shutdown the system (used for clean rpi shutdown)
 
 @app.route('/ecl/api/v1.0/shutdown', methods=['PUT'])
