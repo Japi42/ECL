@@ -3,6 +3,7 @@
 from ECL_config import ECL_config
 from ECL_config import main_config
 from ECL_core import updateControls
+from Controls import main_controller
 import time
 import argparse
 import sys
@@ -25,6 +26,10 @@ options = getOptions(sys.argv[1:])
 # Load the main configuration file
 
 main_config.load_xml_config(configfile = options.configfile)
+
+# Start the main controller thread
+
+main_controller.start()
 
 # Start the Flask server, if we are listening for updates
 
