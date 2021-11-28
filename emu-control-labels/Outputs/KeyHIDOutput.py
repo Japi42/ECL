@@ -22,10 +22,10 @@ class HIDKeyboardUpdater(threading.Thread):
         self.initKeyboard()
     
         while True:
-            with condition:
-                condition.wait_for(checkControlsUpdate)
+            with self.condition:
+                self.condition.wait_for(self.checkControlsUpdate)
                 report = self.buildHIDReport()
-                dirty = False
+                self.dirty = False
 
 # send the HID report outside of the lock
                 
@@ -66,7 +66,7 @@ class HIDKeyboardUpdater(threading.Thread):
             print("Max held keys")
                     
     def releaseKey(self, scancode):
-        with condition:
+        with self.condition:
             for i in range(6):
                 if self.held_keys[i] == scancode:
                     self.held_keys[i] = 0x0
@@ -77,7 +77,7 @@ class HIDKeyboardUpdater(threading.Thread):
             print("Key not found while releasing")
 
     def releaseAllKeys(self):
-        with condition:
+        with self.condition:
             for i in range(6):
                 self.held_keys[i] = 0x0
 
@@ -112,9 +112,9 @@ class KeyHIDOutput:
         with self.condition:
             self.state = state
             if state:
-                pressKey(self.scancode)
+                keyboardThread.pressKey(self.scancode)
             else:
-                releaseKey(self.scancode)
+                keyboardThread.releaseKey(self.scancode)
                 
             print(str(self.id) + " changed to " + str(state))
 
