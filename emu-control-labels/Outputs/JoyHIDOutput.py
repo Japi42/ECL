@@ -63,12 +63,8 @@ def initJoystick(devname="/dev/hidg0"):
 def writeHIDReport(report):
     global devhandle
 
-    print("Writing HID report")
-    
     devhandle.write(report)
     devhandle.flush()
-
-    print("Done writing HID report")
 
     
 def buildHIDReport():
