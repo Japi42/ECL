@@ -147,6 +147,10 @@ class ECL_config:
                 output_button = output_elem.attrib.get("button")
                 from Outputs.JoyHIDOutput import JoyHIDOutput
                 output = JoyHIDOutput(output_id, button_num=int(output_button))
+            elif output_type == "hidkey":
+                output_scancode = output_elem.attrib.get("scancode")
+                from Outputs.KeyHIDOutput import KeyHIDOutput
+                output = KeyHIDOutput(output_id, scancode=int(output_scancode))
 
             if output is not None:
                 self.outputs[output_id] = output
