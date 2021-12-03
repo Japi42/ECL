@@ -8,7 +8,7 @@ from Emulators.Emu_config import Emu_config, Emu_game_config, Control_label
 
 class Generic_Config(Emu_config):
     
-    def __init__(self):
+    def __init__(self, emu_id):
         super().__init__()
-        self.emulator_id = 'supermodel'
+        self.emulator_id = emu_id
     

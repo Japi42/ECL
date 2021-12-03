@@ -98,7 +98,7 @@ class ECL_config:
                 ec = MAME_Config(config_path=config_path)
             elif emu_type == "Generic":
                 from Emulators.Generic import Generic_Config
-                ec = Generic_Config()
+                ec = Generic_Config(emu_id)
 
             if ec is not None: 
                 disps = emu.findall("./controls/control")
