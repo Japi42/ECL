@@ -15,13 +15,13 @@
             <text lang="en_us">Forward</text>
          </control>
          <control name="ECL_P1_SHIFT_DOWN">
-            <text lang="en_us" color="#00ff00">F</text>
+            <text lang="en_us" color="#00ff00">D</text>
          </control>
          <control name="ECL_P1_SHIFT_UP">
             <text lang="en_us" color="#0000ff">R</text>
          </control>
          <control name="ECL_P1_GEAR" default_text_id="1">
-            <text id="1" lang="en_us" color="#00ff00">F</text>
+            <text id="1" lang="en_us" color="#00ff00">D</text>
             <text id="2" lang="en_us" color="#0000ff">R</text>
          </control>
          <control name="axis_x">
