@@ -21,8 +21,8 @@
             <text lang="en_us" color="#0000ff">R</text>
          </control>
          <control name="ECL_P1_GEAR" default_text_id="1">
-            <text id="1" lang="en_us" color="#00ff00">R</text>
-            <text id="2" lang="en_us" color="#0000ff">F</text>
+            <text id="1" lang="en_us" color="#00ff00">F</text>
+            <text id="2" lang="en_us" color="#0000ff">R</text>
          </control>
          <control name="axis_x">
             <text lang="en_us">Steer</text>
