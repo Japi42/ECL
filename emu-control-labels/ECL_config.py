@@ -24,6 +24,7 @@ class ECL_config:
         self.data_directory = str(my_path.parent) + "/data"
         self.default_font = "Jellee-Roman.ttf"
         self.font_path = "~/fonts/"
+        self.burn_in_time = 60; # seconds
 
     def load_xml_config(self, configfile):
         tree = ET.parse(configfile)

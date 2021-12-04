@@ -9,6 +9,8 @@ import time
 
 from Inputs.Input import Input
 
+from Controls import main_controller
+
 class TimerInput:
 
     def __init__(self, interval=5, hold=0.1):
@@ -30,5 +32,9 @@ class TimerInput:
                     self.next_time = cur_time + self.hold_time
                     self.state = True
 
+            if self.state != self.last_state:
+                self.last_state = self.state
+                main_controller.wakeControls()
+                    
             return self.state
                

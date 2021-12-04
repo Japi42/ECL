@@ -76,6 +76,32 @@ def updateDisplays(game, emulator, mappings, multitext_ids, update_control_id=No
         else:
             display.display_text("", color="#000000")
 
+def sleepDisplays():
+
+# Loop through all the controls, putting asleep
+    
+    for control_id in main_config.controls:
+
+# skip update if not updating all, and not on the updating display
+
+        control = main_config.controls[control_id]
+        display = control.display
+        if display is not None:
+            display.sleep()
+
+def wakeDisplays():
+
+# Loop through all the controls, awaken displays
+    
+    for control_id in main_config.controls:
+
+# skip update if not updating all, and not on the updating display
+
+        control = main_config.controls[control_id]
+        display = control.display
+        if display is not None:
+            display.awaken()
+            
 def calcFontSize(game, emulator, mappings):
 # Get the config for the requested emulator
 

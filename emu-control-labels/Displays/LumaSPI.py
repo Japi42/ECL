@@ -59,5 +59,13 @@ class LumaSPI(Display):
         self.init_draw_context()
     
     def output_image(self, image):
+        self.awaken()
         self.device.display(image.convert(self.device.mode))
 
+    def sleep(self):
+        self.device.hide()
+        pass
+
+    def awaken(self):
+        self.device.show()
+        pass

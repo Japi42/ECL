@@ -11,6 +11,7 @@ class TextOut(Display):
         self.colors = 65536
 
     def display_text(self, text, font_name=None, font_size=None, color=None):
+        self.awaken()
         print(self.id + ":" + text)
 
     def display_image(self, image):
@@ -19,3 +20,10 @@ class TextOut(Display):
     def calc_max_font_size(self, text, font_name=None):
         return None
     
+    def sleep(self):
+        print(self.id + " went to sleep")
+        pass
+
+    def awaken(self):
+        print(self.id + " woke up")
+        pass

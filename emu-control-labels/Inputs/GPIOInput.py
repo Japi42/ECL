@@ -7,6 +7,8 @@ Created on Nov 22, 2021
 import board
 from digitalio import DigitalInOut, Direction, Pull
 
+from Controls import main_controller
+
 import threading
 
 from Inputs.Input import Input
@@ -23,9 +25,15 @@ class GPIOInput:
     def getState(self):
         with self.condition:
             if self.button.value:
-                return False
+                self.state = False
             else:
-                return True
+                self.state = True
+
+            if self.state != self.last_state:
+                self.last_state = self.state
+                main_controller.wakeControls()
+            
+            return self.state
 
     def pinMapper(self, pin):
         if pin == "D4":

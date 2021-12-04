@@ -46,7 +46,6 @@ class Display:
 
         return None
 
-
     def get_font(self, font_name=None, font_size=None):
         from ECL_config import main_config
         
@@ -73,3 +72,8 @@ class Display:
             
         return font
             
+    def sleep(self):
+        pass
+
+    def awaken(self):
+        pass

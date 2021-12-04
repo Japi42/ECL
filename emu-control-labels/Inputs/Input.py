@@ -11,6 +11,7 @@ class Input:
     def __init__(self):
         self.condition = threading.Condition()
         self.state = None
+        self.last_state = None
 
     def getState(self):
         with self.condition:
