@@ -52,7 +52,8 @@ class ControlsController(threading.Thread):
                 return True
 
             current_time = time.time()
-            if current_time > (self.last_update + main_config.burn_in_time):
+            if main_config.burn_in_time > 0 and \
+               current_time > (self.last_update + main_config.burn_in_time):
                 return True
             
         return False
@@ -88,7 +89,9 @@ class ControlsController(threading.Thread):
                     wake = True
                     self.next_wake = False
                 
-                if time.time() > (self.last_update + main_config.burn_in_time):
+                if main_config.burn_in_time > 0 and \
+                   time.time() > (self.last_update + main_config.burn_in_time):
+                    print("Sleepy time")
                     sleep = True
                     self.last_update = time.time()
                     

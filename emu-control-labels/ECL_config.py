@@ -24,7 +24,7 @@ class ECL_config:
         self.data_directory = str(my_path.parent) + "/data"
         self.default_font = "Jellee-Roman.ttf"
         self.font_path = "~/fonts/"
-        self.burn_in_time = 60; # seconds
+        self.burn_in_time = 0; # seconds
 
     def load_xml_config(self, configfile):
         tree = ET.parse(configfile)
@@ -52,6 +52,13 @@ class ECL_config:
                 id = led_dev.attrib["id"]
                 self.led_devices[id] = dev
 
+        controls_tag = root.find("./controls")
+        if controls_tag is not None:
+            burn_in = controls_tag.attrib.get("burnin")
+            if burn_in is not None:
+                self.burn_in_time = int(burn_in)
+                print("Set burn in protection to " + str(self.burn_in_time))
+                
         # Create all the physical controls (with displays and LEDs)
         
         control_tags = root.findall("./controls/control")
