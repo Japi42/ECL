@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="dinou" gamename="Cadillacs and Dinosaurs (USA 930201)" numPlayers="3" alternating="0" cloneof="dino">
+      <miscDetails>
+		</miscDetails>
+   </game>
+</ecl>

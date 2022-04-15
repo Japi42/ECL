@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="nbbatmanu" gamename="Ninja Baseball Bat Man (USA)" numPlayers="4" alternating="0" cloneof="nbbatman">
+      <miscDetails>
+		</miscDetails>
+   </game>
+</ecl>

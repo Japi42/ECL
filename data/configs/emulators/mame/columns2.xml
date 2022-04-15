@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="columns2" gamename="Columns II: The Voyage Through Time (World)" numPlayers="2" alternating="0">
+      <miscDetails>
+The button is actually unlabed on the cpo and in the manual.  
+		</miscDetails>
+      <controls>
+         <control name="COIN1">
+            <text lang="en_us">Coin</text>
+         </control>
+         <control name="COIN2">
+            <text lang="en_us">Coin</text>
+         </control>
+         <control name="P1_BUTTON1">
+            <text lang="en_us">Switch Pieces</text>
+            <text width="96" height="64" lang="en_us">Switch
+Pieces</text>
+         </control>
+         <control name="P1_JOYSTICK">
+            <text lang="en_us"/>
+         </control>
+         <control name="P1_JOYSTICK_DOWN">
+            <text lang="en_us">Drop</text>
+         </control>
+         <control name="P1_JOYSTICK_LEFT">
+            <text lang="en_us">Left</text>
+         </control>
+         <control name="P1_JOYSTICK_RIGHT">
+            <text lang="en_us">Right</text>
+         </control>
+         <control name="P1_JOYSTICK_UP">
+            <text lang="en_us">(Not Used)</text>
+         </control>
+         <control name="P1_START">
+            <text lang="en_us">Start</text>
+         </control>
+         <control name="P2_BUTTON1">
+            <text lang="en_us">Switch Pieces</text>
+            <text width="96" height="64" lang="en_us">Switch
+Pieces</text>
+         </control>
+         <control name="P2_JOYSTICK">
+            <text lang="en_us"/>
+         </control>
+         <control name="P2_JOYSTICK_DOWN">
+            <text lang="en_us">Drop</text>
+         </control>
+         <control name="P2_JOYSTICK_LEFT">
+            <text lang="en_us">Left</text>
+         </control>
+         <control name="P2_JOYSTICK_RIGHT">
+            <text lang="en_us">Right</text>
+         </control>
+         <control name="P2_JOYSTICK_UP">
+            <text lang="en_us">(Not Used)</text>
+         </control>
+         <control name="P2_START">
+            <text lang="en_us">Start</text>
+         </control>
+      </controls>
+   </game>
+</ecl>

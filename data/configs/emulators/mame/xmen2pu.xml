@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="xmen2pu" gamename="X-Men (2 Players ver UBB)" numPlayers="2" alternating="0" cloneof="xmen2p">
+      <miscDetails>
+		</miscDetails>
+   </game>
+</ecl>
