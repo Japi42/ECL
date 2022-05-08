@@ -18,6 +18,9 @@ There isn't much info about the 'real' name for the second button on the guns.  
          <control name="P1_BUTTON2">
             <text lang="en_us">Secondary Weapon</text>
          </control>
+         <control name="P1_LIGHTGUN">
+            <text lang="en_us">Aim</text>
+         </control>
          <control name="P1_LIGHTGUN_X">
             <text lang="en_us">Left</text>
          </control>
@@ -41,6 +44,9 @@ There isn't much info about the 'real' name for the second button on the guns.  
          </control>
          <control name="P2_BUTTON2">
             <text lang="en_us">Secondary Weapon</text>
+         </control>
+         <control name="P2_LIGHTGUN">
+            <text lang="en_us">Aim</text>
          </control>
          <control name="P2_LIGHTGUN_X">
             <text lang="en_us">Left</text>
