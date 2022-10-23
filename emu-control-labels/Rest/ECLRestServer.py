@@ -46,6 +46,16 @@ def put_control_id(id):
 #    queueUpdateControls(game, emulator, mappings)
     return jsonify({'status': 'Good'})
 
+# Indicate that there has been some activity on the cabinet
+
+@app.route('/ecl/api/v1.0/wake', methods=['PUT'])
+def put_wake_controls():
+    content = request.json
+
+    main_controller.wakeControls()
+ 
+    return jsonify({'status': 'Good'})
+
 # Shutdown the system (used for clean rpi shutdown)
 
 @app.route('/ecl/api/v1.0/shutdown', methods=['PUT'])
