@@ -27,7 +27,7 @@ class PacDrive(LedDevice):
         leds = []
         
         for output in self.outputs:
-            print("Found output " + str(output.pin))
+#            print("Found output " + str(output.pin))
             if output.state != LedOutputState.Off:
                 leds.append(output.pin)
         
