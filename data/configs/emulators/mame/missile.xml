@@ -16,12 +16,18 @@
          </control>
          <control name="P1_BUTTON1">
             <text lang="en_us">Fire - Alpha Base</text>
+            <text width="96" height="64" lang="en_us">Fire
+Alpha Base</text>
          </control>
          <control name="P1_BUTTON2">
             <text lang="en_us">Fire - Delta Base</text>
+            <text width="96" height="64" lang="en_us">Fire
+Delta Base</text>
          </control>
          <control name="P1_BUTTON3">
             <text lang="en_us">Fire - Omega Base</text>
+            <text width="96" height="64" lang="en_us">Fire
+Omega Base</text>
          </control>
          <control name="P1_START">
             <text lang="en_us">Start</text>

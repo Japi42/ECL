@@ -19,7 +19,7 @@ If you press both buttons at the same time, your character does a special move o
             <text lang="en_us">Jump</text>
          </control>
          <control name="P1_BUTTON3">
-            <text lang="en_us"/>
+            <text lang="en_us">Deathblow</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -46,7 +46,7 @@ If you press both buttons at the same time, your character does a special move o
             <text lang="en_us">Jump</text>
          </control>
          <control name="P2_BUTTON3">
-            <text lang="en_us"/>
+            <text lang="en_us">Deathblow</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>
