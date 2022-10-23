@@ -303,6 +303,7 @@ class Text_label:
         self.text = text
         self.font = font
         self.font_size = font_size
+        self.font_size_calced = False 
         self.color = color
         self.lang = lang
         self.width = width

@@ -71,6 +71,8 @@ def updateDisplays(game, emulator, mappings, multitext_ids, update_control_id=No
         
             if font_size is None:
                 font_size = calced_font_size
+                text_label.font_size = calced_font_size
+                text_label.font_size_calced = True
                 
             display.display_text(text, color=color, font_name=font, font_size=font_size)
         else:
@@ -124,10 +126,15 @@ def calcFontSize(game, emulator, mappings):
             text_label = label.get_text_label(width=display.width, height=display.height)
             text = text_label.text
             font = text_label.font
-            font_size = display.calc_max_font_size(text, font_name=font)
-            if font_size is not None:
+            font_size = text_label.font_size
+            if text_label.font_size_calced == True:
                 if max_font_size is None or font_size < max_font_size:
                     max_font_size = font_size
+            elif font_size is None:
+                font_size = display.calc_max_font_size(text, font_name=font, size_hint=max_font_size)
+                if font_size is not None:
+                    if max_font_size is None or font_size < max_font_size:
+                        max_font_size = font_size
 
     print("Calculated font size of " + str(max_font_size))
                 

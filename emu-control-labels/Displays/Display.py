@@ -17,6 +17,9 @@ class Display:
         self.draw = ImageDraw.Draw(self.image)
 
     def display_text(self, text, font_name=None, font_size=None, color="#ffffff"):
+        if text is None:
+            return
+
         if font_size is None:
             font_size = 24
 
@@ -33,10 +36,19 @@ class Display:
 
         self.output_image(self.image)
 
-    def calc_max_font_size(self, text, font_name=None):
+    def calc_max_font_size(self, text, font_name=None, size_hint=None):
 
-        for font_size in range(80, 1, -1):
+        if text is None:
+            return None
+
+        if size_hint is None:
+            size_hint = 80
+
+        for font_size in range(size_hint, 1, -1):
             font = self.get_font(font_name, font_size)
+            if font is None:
+                print(f'Error loading font {font_name}')
+                return None
 
             (text_width, text_height) = self.draw.textsize(text, font) 
 
