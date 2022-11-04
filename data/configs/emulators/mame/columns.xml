@@ -37,6 +37,8 @@ Pieces</text>
          </control>
          <control name="P2_BUTTON1">
             <text lang="en_us">Switch Pieces</text>
+            <text width="96" height="64" lang="en_us">Switch
+Pieces</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>
