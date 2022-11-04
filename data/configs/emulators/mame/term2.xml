@@ -23,7 +23,10 @@
          <control name="P1_BUTTON2">
             <text lang="en_us">Bomb</text>
          </control>
-         <control name="P1_LIGHTGUN_X">
+         <control name="P1_LIGHTGUN">
+            <text lang="en_us"/>
+         </control>
+	 <control name="P1_LIGHTGUN_X">
             <text lang="en_us">Aim Left</text>
          </control>
          <control name="P1_LIGHTGUN_X_EXT">
@@ -47,7 +50,10 @@
          <control name="P2_BUTTON2">
             <text lang="en_us">Bomb</text>
          </control>
-         <control name="P2_LIGHTGUN_X">
+         <control name="P2_LIGHTGUN">
+            <text lang="en_us"/>
+         </control>
+	 <control name="P2_LIGHTGUN_X">
             <text lang="en_us">Aim Left</text>
          </control>
          <control name="P2_LIGHTGUN_X_EXT">

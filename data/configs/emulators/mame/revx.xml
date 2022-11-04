@@ -24,7 +24,10 @@ The 'bomb' button actually shoots a compact disc.  But that's what it is labeled
          <control name="P1_BUTTON2">
             <text lang="en_us">Bomb</text>
          </control>
-         <control name="P1_LIGHTGUN_X">
+         <control name="P1_LIGHTGUN">
+            <text lang="en_us"/>
+         </control>
+	 <control name="P1_LIGHTGUN_X">
             <text lang="en_us">Aim Left</text>
          </control>
          <control name="P1_LIGHTGUN_X_EXT">
@@ -48,7 +51,10 @@ The 'bomb' button actually shoots a compact disc.  But that's what it is labeled
          <control name="P2_BUTTON2">
             <text lang="en_us">Bomb</text>
          </control>
-         <control name="P2_LIGHTGUN_X">
+         <control name="P2_LIGHTGUN">
+            <text lang="en_us"/>
+         </control>
+	 <control name="P2_LIGHTGUN_X">
             <text lang="en_us">Aim Left</text>
          </control>
          <control name="P2_LIGHTGUN_X_EXT">
@@ -72,7 +78,10 @@ The 'bomb' button actually shoots a compact disc.  But that's what it is labeled
          <control name="P3_BUTTON2">
             <text lang="en_us">Bomb</text>
          </control>
-         <control name="P3_LIGHTGUN_X">
+         <control name="P3_LIGHTGUN">
+            <text lang="en_us"/>
+         </control>
+	 <control name="P3_LIGHTGUN_X">
             <text lang="en_us">Aim Left</text>
          </control>
          <control name="P3_LIGHTGUN_X_EXT">
