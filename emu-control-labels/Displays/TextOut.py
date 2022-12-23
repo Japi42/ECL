@@ -17,7 +17,7 @@ class TextOut(Display):
     def display_image(self, image):
         pass
 
-    def calc_max_font_size(self, text, font_name=None):
+    def calc_max_font_size(self, text, font_name=None, size_hint=None):
         return None
     
     def sleep(self):
