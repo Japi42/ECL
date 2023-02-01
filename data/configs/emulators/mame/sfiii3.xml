@@ -5,7 +5,7 @@
       <miscDetails>
  
 		</miscDetails>
-      <controls>
+      <controls font="BravoRG.otf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
@@ -14,21 +14,33 @@
          </control>
          <control name="P1_BUTTON1">
             <text lang="en_us">Jab Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">JAB
+PUNCH</text>
          </control>
          <control name="P1_BUTTON2">
             <text lang="en_us">Strong Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">STRONG
+PUNCH</text>
          </control>
          <control name="P1_BUTTON3">
             <text lang="en_us">Fierce Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">FIERCE
+PUNCH</text>
          </control>
          <control name="P1_BUTTON4">
             <text lang="en_us">Short Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">SHORT
+KICK</text>
          </control>
          <control name="P1_BUTTON5">
-            <text lang="en_us">Strong Kick</text>
+            <text lang="en_us">Forward Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">FORWARD
+KICK</text>
          </control>
          <control name="P1_BUTTON6">
             <text lang="en_us">Roundhouse Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">ROUNDHOUSE
+KICK</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -50,21 +62,33 @@
          </control>
          <control name="P2_BUTTON1">
             <text lang="en_us">Jab Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Jab
+Punch</text>
          </control>
          <control name="P2_BUTTON2">
             <text lang="en_us">Strong Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Strong
+Punch</text>
          </control>
          <control name="P2_BUTTON3">
             <text lang="en_us">Fierce Punch</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Fierce
+Punch</text>
          </control>
          <control name="P2_BUTTON4">
             <text lang="en_us">Short Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Short
+Kick</text>
          </control>
          <control name="P2_BUTTON5">
-            <text lang="en_us">Strong Kick</text>
+            <text lang="en_us">Forward Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Forward
+Kick</text>
          </control>
          <control name="P2_BUTTON6">
             <text lang="en_us">Roundhouse Kick</text>
+            <text width="96" height="64" lang="en_us" color="#ffffff">Roundhouse
+Kick</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>
