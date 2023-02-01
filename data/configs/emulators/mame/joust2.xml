@@ -4,7 +4,7 @@
    <game romname="joust2" gamename="Joust 2 - Survival of the Fittest (set 1)" numPlayers="2" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls>
+      <controls font="Goudy Medieval Alternate.ttf">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
@@ -18,7 +18,7 @@
             <text lang="en_us">Flap</text>
          </control>
          <control name="P1_BUTTON2">
-            <text lang="en_us">Start Player 1 / Transform</text>
+            <text lang="en_us">Transform</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -33,10 +33,10 @@
             <text lang="en_us">Start</text>
          </control>
          <control name="P2_BUTTON1">
-            <text lang="en_us" unverified="1">1</text>
+            <text lang="en_us">Flap</text>
          </control>
          <control name="P2_BUTTON2">
-            <text lang="en_us" unverified="1">2</text>
+            <text lang="en_us">Transform</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>

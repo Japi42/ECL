@@ -19,17 +19,17 @@ OTHER:  There is a dipswitch to use either two 49-way or two 8-way joysticks for
             <text lang="en_us">Coin</text>
          </control>
          <control name="P1_BUTTON1">
-            <text lang="en_us">Turbo</text>
-         </control>
-         <control name="P1_BUTTON2">
             <text lang="en_us">Jump/Tackle</text>
 	    <text width="96" height="64" lang="en_us">Jump
 Tackle</text>
          </control>
-         <control name="P1_BUTTON3">
+         <control name="P1_BUTTON2">
             <text lang="en_us">Pass/Change Player</text>
 	    <text width="96" height="64" lang="en_us">Pass
 Change Player</text>
+         </control>
+         <control name="P1_BUTTON3">
+            <text lang="en_us">Turbo</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -50,17 +50,17 @@ Change Player</text>
             <text lang="en_us">Start</text>
          </control>
          <control name="P2_BUTTON1">
-            <text lang="en_us">Turbo</text>
-         </control>
-         <control name="P2_BUTTON2">
             <text lang="en_us">Jump/Tackle</text>
 	    <text width="96" height="64" lang="en_us">Jump
 Tackle</text>
          </control>
-         <control name="P2_BUTTON3">
+         <control name="P2_BUTTON2">
             <text lang="en_us">Pass/Change Player</text>
 	    <text width="96" height="64" lang="en_us">Pass
 Change Player</text>
+         </control>
+         <control name="P2_BUTTON3">
+            <text lang="en_us">Turbo</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>

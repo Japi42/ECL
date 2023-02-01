@@ -20,18 +20,26 @@ Mame uses the jamma standard for button numbering and thus all of the mk games a
          </control>
          <control name="P1_BUTTON1">
             <text lang="en_us">High Punch</text>
+            <text width="96" height="64" lang="en_us">High
+Punch</text>
          </control>
          <control name="P1_BUTTON2">
             <text lang="en_us">Block</text>
          </control>
          <control name="P1_BUTTON3">
             <text lang="en_us">High Kick</text>
+            <text width="96" height="64" lang="en_us">High
+Kick</text>
          </control>
          <control name="P1_BUTTON4">
             <text lang="en_us">Low Punch</text>
+            <text width="96" height="64" lang="en_us">Low
+Punch</text>
          </control>
          <control name="P1_BUTTON5">
             <text lang="en_us">Low Kick</text>
+            <text width="96" height="64" lang="en_us">Low
+Kick</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -53,18 +61,26 @@ Mame uses the jamma standard for button numbering and thus all of the mk games a
          </control>
          <control name="P2_BUTTON1">
             <text lang="en_us">High Punch</text>
+            <text width="96" height="64" lang="en_us">High
+Punch</text>
          </control>
          <control name="P2_BUTTON2">
             <text lang="en_us">Block</text>
          </control>
          <control name="P2_BUTTON3">
             <text lang="en_us">High Kick</text>
+            <text width="96" height="64" lang="en_us">High
+Kick</text>
          </control>
          <control name="P2_BUTTON4">
             <text lang="en_us">Low Punch</text>
+            <text width="96" height="64" lang="en_us">Low
+Punch</text>
          </control>
          <control name="P2_BUTTON5">
             <text lang="en_us">Low Kick</text>
+            <text width="96" height="64" lang="en_us">Low
+Kick</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>

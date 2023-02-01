@@ -18,17 +18,17 @@
             <text lang="en_us">Coin</text>
          </control>
          <control name="P1_BUTTON1">
-            <text lang="en_us">Turbo</text>
-         </control>
-         <control name="P1_BUTTON2">
             <text lang="en_us">Jump/Tackle</text>
 	    <text width="96" height="64" lang="en_us">Jump
 Tackle</text>
          </control>
-         <control name="P1_BUTTON3">
+         <control name="P1_BUTTON2">
             <text lang="en_us">Pass/Change Player</text>
 	    <text width="96" height="64" lang="en_us">Pass
 Change Player</text>
+         </control>
+         <control name="P1_BUTTON3">
+            <text lang="en_us">Turbo</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -49,17 +49,17 @@ Change Player</text>
             <text lang="en_us">Start</text>
          </control>
          <control name="P2_BUTTON1">
-            <text lang="en_us">Turbo</text>
-         </control>
-         <control name="P2_BUTTON2">
             <text lang="en_us">Jump/Tackle</text>
 	    <text width="96" height="64" lang="en_us">Jump
 Tackle</text>
          </control>
-         <control name="P2_BUTTON3">
+         <control name="P2_BUTTON2">
             <text lang="en_us">Pass/Change Player</text>
 	    <text width="96" height="64" lang="en_us">Pass
 Change Player</text>
+         </control>
+         <control name="P2_BUTTON3">
+            <text lang="en_us">Turbo</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>
@@ -77,6 +77,68 @@ Change Player</text>
             <text lang="en_us">Up</text>
          </control>
          <control name="P2_START">
+            <text lang="en_us">Start</text>
+         </control>
+         <control name="P3_BUTTON1">
+            <text lang="en_us">Jump/Tackle</text>
+	    <text width="96" height="64" lang="en_us">Jump
+Tackle</text>
+         </control>
+         <control name="P3_BUTTON2">
+            <text lang="en_us">Pass/Change Player</text>
+	    <text width="96" height="64" lang="en_us">Pass
+Change Player</text>
+         </control>
+         <control name="P3_BUTTON3">
+            <text lang="en_us">Turbo</text>
+         </control>
+         <control name="P3_JOYSTICK">
+            <text lang="en_us"/>
+         </control>
+         <control name="P3_JOYSTICK_DOWN">
+            <text lang="en_us">Down</text>
+         </control>
+         <control name="P3_JOYSTICK_LEFT">
+            <text lang="en_us">Left</text>
+         </control>
+         <control name="P3_JOYSTICK_RIGHT">
+            <text lang="en_us">Right</text>
+         </control>
+         <control name="P3_JOYSTICK_UP">
+            <text lang="en_us">Up</text>
+         </control>
+         <control name="P3_START">
+            <text lang="en_us">Start</text>
+         </control>
+         <control name="P4_BUTTON1">
+            <text lang="en_us">Jump/Tackle</text>
+	    <text width="96" height="64" lang="en_us">Jump
+Tackle</text>
+         </control>
+         <control name="P4_BUTTON2">
+            <text lang="en_us">Pass/Change Player</text>
+	    <text width="96" height="64" lang="en_us">Pass
+Change Player</text>
+         </control>
+         <control name="P4_BUTTON3">
+            <text lang="en_us">Turbo</text>
+         </control>
+         <control name="P4_JOYSTICK">
+            <text lang="en_us"/>
+         </control>
+         <control name="P4_JOYSTICK_DOWN">
+            <text lang="en_us">Down</text>
+         </control>
+         <control name="P4_JOYSTICK_LEFT">
+            <text lang="en_us">Left</text>
+         </control>
+         <control name="P4_JOYSTICK_RIGHT">
+            <text lang="en_us">Right</text>
+         </control>
+         <control name="P4_JOYSTICK_UP">
+            <text lang="en_us">Up</text>
+         </control>
+         <control name="P4_START">
             <text lang="en_us">Start</text>
          </control>
       </controls>
