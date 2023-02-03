@@ -85,6 +85,13 @@ class MAME_ctrlr_config:
             self.load_from_xml(filename, romname)
     
     def load_from_xml(self, filename, romname):
+
+        if filename == None:
+            return
+        if path.exists(filename) == False:
+            print("Failed to load file " + filename)
+            return
+
         tree = ET.parse(filename)
         root = tree.getroot()
         
