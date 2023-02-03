@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 import re
 import os.path
 from os import path
+import copy
 
 class MAME_Config(Emu_config):
     
@@ -17,14 +18,14 @@ class MAME_Config(Emu_config):
         self.config_path = config_path
         if self.config_path.endswith("/") is False:
             self.config_path = self.config_path + "/"
-        self.empty_cfg = MAME_ctrlr_config()
-        self.empty_cfg.set_defaults()
-        self.default_cfg = MAME_ctrlr_config(self.config_path + "default.cfg")
+        self.default_cfg = MAME_ctrlr_config()
+        self.default_cfg.set_defaults()
+        self.default_cfg.load_from_xml(self.config_path + "default.cfg", 'default')
         self.emulator_id = 'mame'
     
     def load_game_config(self, game_id):
         if game_id not in self.game_configs:
-            self.game_configs[game_id] = MAME_game_config(game_id, self.config_path)
+            self.game_configs[game_id] = MAME_game_config(game_id, self.config_path, self.default_cfg)
 
         return self.game_configs[game_id]
     
@@ -56,35 +57,27 @@ class MAME_Config(Emu_config):
             control = mame_ctrlr_cfg.control_mappings.get(emu_control_id)
             if control != None:
                 return control
-        
-        # check default config
- 
-        if self.default_cfg != None:
-            control = self.default_cfg.control_mappings.get(emu_control_id)
-            if control != None:
-                return control
-        
-        # check hard coded defaults
-        
-        control = self.empty_cfg.control_mappings.get(emu_control_id)
-        if control != None:
-            return control
 
-        return control_id
+        return emu_control_id
         
 class MAME_game_config(Emu_game_config):
     
-    def __init__(self, game_id, config_path):
+    def __init__(self, game_id, config_path, default_config=None):
+
         self.config_path = config_path
         super().__init__(game_id, 'mame')
         if game_id is not None:
-            self.game_ctrlr_config = MAME_ctrlr_config(self.config_path + game_id + ".cfg", game_id)
+            if default_config is not None:
+               self.game_ctrlr_config = copy.deepcopy(default_config)
+               self.game_ctrlr_config.load_from_xml(self.config_path + game_id + ".cfg", game_id)
+            else:
+               self.game_ctrlr_config = MAME_ctrlr_config(self.config_path + game_id + ".cfg", game_id)
 
 class MAME_ctrlr_config:
     
     def __init__(self, filename=None, romname = "default"):
 
-        print("Loading MAME config for " + romname)
+#        print("Loading MAME config for " + romname)
         self.control_mappings = {}
         if filename == None or path.exists(filename) == False:
             self.set_defaults()
@@ -97,6 +90,9 @@ class MAME_ctrlr_config:
         
         ports = root.findall("./system[@name='" + romname + "']/input/port")
         for port in ports:
+
+            # "type" is something like "P1_BUTTON4" - what is used in the ECL game config
+
             if 'type' in port.attrib:
                 type = port.attrib['type']
             
@@ -104,8 +100,19 @@ class MAME_ctrlr_config:
                 for seq in seqs:
                     keystr = seq.text
                     self.parse_keyseq(type, keystr)
-        
+
+    def remove_mapping_by_target(self, target):
+
+        for key, value in dict(self.control_mappings).items():
+            if self.control_mappings[key] == target:
+                print("Removing key " + key)
+                self.control_mappings.pop(key)
+                    
     def parse_keyseq(self, type, all_seqs):
+
+# Clear out the default, if it exists
+        
+        self.remove_mapping_by_target(type)
         
         seqs = all_seqs.split("OR")
         for seq in seqs:
