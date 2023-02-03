@@ -12,7 +12,10 @@ class TextOut(Display):
 
     def display_text(self, text, font_name=None, font_size=None, color=None):
         self.awaken()
-        print(self.id + ":" + text)
+        if self.id is not None and text is not None:
+            print(self.id + ":" + text)
+        else:
+            print("ID None? text: " + text)
 
     def display_image(self, image):
         pass
@@ -25,5 +28,6 @@ class TextOut(Display):
         pass
 
     def awaken(self):
-        print(self.id + " woke up")
+        if self.id is not None:
+           print(self.id + " woke up")
         pass
