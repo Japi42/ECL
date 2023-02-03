@@ -40,6 +40,7 @@ Fonts are not distributed, due to licensing complexities.  All of the fonts refe
 * MumboSSK Bold.ttf (Asteriods Deluxe): <https://ufonts.com/fonts/mumbossk-bold.html> (Needs to be renamed)
 * computerfont.ttf (Defender): <https://www.dafont.com/computerfont.font>
 * RacingSansOne-Regular.ttf (Outrun): <https://www.1001fonts.com/racing-sans-one-font.html>
+* aAsianNinja.otf (Knights of Valour) <https://www.dafont.com/a-asian-ninja.font>
 
 ## Warnings:
 
