@@ -41,6 +41,7 @@ Fonts are not distributed, due to licensing complexities.  All of the fonts refe
 * computerfont.ttf (Defender): <https://www.dafont.com/computerfont.font>
 * RacingSansOne-Regular.ttf (Outrun): <https://www.1001fonts.com/racing-sans-one-font.html>
 * aAsianNinja.otf (Knights of Valour) <https://www.dafont.com/a-asian-ninja.font>
+* Simpsonfont-p07r.ttf <Simpsons, Simpson Bowling> <https://www.fontspace.com/simpsonfont-font-f26107>
 
 ## Warnings:
 

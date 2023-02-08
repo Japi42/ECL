@@ -4,7 +4,7 @@
    <game romname="simpsons" gamename="The Simpsons (4 Players World, set 1)" numPlayers="4" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls>
+      <controls font="Simpsonfont-p07r.ttf" color="#ffd90f">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="ggx" gamename="Guilty Gear X" numPlayers="2" alternating="0">
+      <miscDetails> 
+  		</miscDetails>
+      <controls font="BravoRG.otf">
+ 	 <control name="P1_BTN_A">
+            <text lang="en_us">Punch</text>
+         </control>
+ 	 <control name="P1_BTN_B">
+            <text lang="en_us">Kick</text>
+         </control>
+ 	 <control name="P1_BTN_C">
+            <text lang="en_us">Slash</text>
+         </control>
+ 	 <control name="P1_BTN_X">
+            <text lang="en_us">Heavy Slash</text>
+            <text width="96" height="64" lang="en_us">Heavy
+Slash</text>
+         </control>
+         <control name="P1_JOYSTICK">
+            <text lang="en_us">Move</text>
+         </control>
+ 	 <control name="P2_BTN_A">
+            <text lang="en_us">Punch</text>
+         </control>
+ 	 <control name="P2_BTN_B">
+            <text lang="en_us">Kick</text>
+         </control>
+ 	 <control name="P2_BTN_C">
+            <text lang="en_us">Slash</text>
+         </control>
+ 	 <control name="P2_BTN_X">
+            <text lang="en_us">Heavy Slash</text>
+            <text width="96" height="64" lang="en_us">Heavy
+Slash</text>
+         </control>
+         <control name="P2_JOYSTICK">
+            <text lang="en_us">Move</text>
+         </control>
+         <control name="P1_BTN_START">
+            <text lang="en_us">Start</text>
+         </control>
+         <control name="P2_BTN_START">
+            <text lang="en_us">Start</text>
+         </control>
+      </controls>
+   </game>
+</ecl>
