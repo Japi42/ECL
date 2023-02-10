@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <ecl>
-   <game romname="nbajam" gamename="NBA Jam (rev 3.01 04/07/93)" numPlayers="4" alternating="0">
+   <game romname="nbajamte" gamename="NBA Jam TE (rev 4.0 3/23/94)" numPlayers="4" alternating="0">
       <miscDetails>
 		</miscDetails>
       <controls font="nba-lakers.otf" color="#ff6600">

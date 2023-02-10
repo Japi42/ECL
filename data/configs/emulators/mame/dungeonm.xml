@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <ecl>
-   <game romname="nbajam" gamename="NBA Jam (rev 3.01 04/07/93)" numPlayers="4" alternating="0">
+   <game romname="dungeonm" gamename="Dungeon Magic (Ver 2.1O 1994/02/18)" numPlayers="4" alternating="0">
       <miscDetails>
 		</miscDetails>
-      <controls font="nba-lakers.otf" color="#ff6600">
+      <controls font="Goudy Medieval Alternate.ttf" color="#ffffff">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
@@ -17,17 +17,10 @@
             <text lang="en_us">Coin</text>
          </control>
          <control name="P1_BUTTON1">
-            <text lang="en_us">Turbo</text>
+            <text lang="en_us">Attack</text>
          </control>
          <control name="P1_BUTTON2">
-            <text lang="en_us">Shoot / Block</text>
-            <text width="96" height="64" lang="en_us">Shoot
-Block</text>
-         </control>
-         <control name="P1_BUTTON3">
-            <text lang="en_us">Pass / Steal</text>
-            <text width="96" height="64" lang="en_us">Pass
-Steal</text>
+            <text lang="en_us">Jump</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -48,17 +41,10 @@ Steal</text>
             <text lang="en_us">Start</text>
          </control>
          <control name="P2_BUTTON1">
-            <text lang="en_us">Turbo</text>
+            <text lang="en_us">Attack</text>
          </control>
          <control name="P2_BUTTON2">
-            <text lang="en_us">Shoot / Block</text>
-            <text width="96" height="64" lang="en_us">Shoot
-Block</text>
-         </control>
-         <control name="P2_BUTTON3">
-            <text lang="en_us">Pass / Steal</text>
-            <text width="96" height="64" lang="en_us">Pass
-Steal</text>
+            <text lang="en_us">Jump</text>
          </control>
          <control name="P2_JOYSTICK">
             <text lang="en_us"/>
@@ -79,17 +65,10 @@ Steal</text>
             <text lang="en_us">Start</text>
          </control>
          <control name="P3_BUTTON1">
-            <text lang="en_us">Turbo</text>
+            <text lang="en_us">Attack</text>
          </control>
          <control name="P3_BUTTON2">
-            <text lang="en_us">Shoot / Block</text>
-            <text width="96" height="64" lang="en_us">Shoot
-Block</text>
-         </control>
-         <control name="P3_BUTTON3">
-            <text lang="en_us">Pass / Steal</text>
-            <text width="96" height="64" lang="en_us">Pass
-Steal</text>
+            <text lang="en_us">Jump</text>
          </control>
          <control name="P3_JOYSTICK">
             <text lang="en_us"/>
@@ -110,17 +89,10 @@ Steal</text>
             <text lang="en_us">Start</text>
          </control>
          <control name="P4_BUTTON1">
-            <text lang="en_us">Turbo</text>
+            <text lang="en_us">Attack</text>
          </control>
          <control name="P4_BUTTON2">
-            <text lang="en_us">Shoot / Block</text>
-            <text width="96" height="64" lang="en_us">Shoot
-Block</text>
-         </control>
-         <control name="P4_BUTTON3">
-            <text lang="en_us">Pass / Steal</text>
-            <text width="96" height="64" lang="en_us">Pass
-Steal</text>
+            <text lang="en_us">Jump</text>
          </control>
          <control name="P4_JOYSTICK">
             <text lang="en_us"/>

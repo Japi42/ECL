@@ -5,7 +5,7 @@
       <miscDetails>
 This game is essentially a clone of sf2.  Only one or two chips where changed and it has the same layout.  
 		</miscDetails>
-      <controls font="BravoRG.otf">
+      <controls font="BravoRG.otf" color="#ffffff">
          <control name="COIN1">
             <text lang="en_us">Coin</text>
          </control>
@@ -14,33 +14,33 @@ This game is essentially a clone of sf2.  Only one or two chips where changed an
          </control>     
          <control name="P1_BUTTON1">
             <text lang="en_us">Jab Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">JAB
-PUNCH</text>
+            <text width="96" height="64" lang="en_us">Jab
+Punch</text>
          </control>
          <control name="P1_BUTTON2">
             <text lang="en_us">Strong Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">STRONG
-PUNCH</text>
+            <text width="96" height="64" lang="en_us">Strong
+Punch</text>
          </control>
          <control name="P1_BUTTON3">
             <text lang="en_us">Fierce Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">FIERCE
-PUNCH</text>
+            <text width="96" height="64" lang="en_us">Fierce
+Punch</text>
          </control>
          <control name="P1_BUTTON4">
             <text lang="en_us">Short Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">SHORT
-KICK</text>
+            <text width="96" height="64" lang="en_us">Short
+Kick</text>
          </control>
          <control name="P1_BUTTON5">
             <text lang="en_us">Forward Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">FORWARD
-KICK</text>
+            <text width="96" height="64" lang="en_us">Forward
+Kick</text>
          </control>
          <control name="P1_BUTTON6">
             <text lang="en_us">Roundhouse Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">ROUNDHOUSE
-KICK</text>
+            <text width="96" height="64" lang="en_us">Roundhouse
+Kick</text>
          </control>
          <control name="P1_JOYSTICK">
             <text lang="en_us"/>
@@ -62,32 +62,32 @@ KICK</text>
          </control>
          <control name="P2_BUTTON1">
             <text lang="en_us">Jab Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Jab
+            <text width="96" height="64" lang="en_us">Jab
 Punch</text>
          </control>
          <control name="P2_BUTTON2">
             <text lang="en_us">Strong Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Strong
+            <text width="96" height="64" lang="en_us">Strong
 Punch</text>
          </control>
          <control name="P2_BUTTON3">
             <text lang="en_us">Fierce Punch</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Fierce
+            <text width="96" height="64" lang="en_us">Fierce
 Punch</text>
          </control>
          <control name="P2_BUTTON4">
             <text lang="en_us">Short Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Short
+            <text width="96" height="64" lang="en_us">Short
 Kick</text>
          </control>
          <control name="P2_BUTTON5">
             <text lang="en_us">Forward Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Forward
+            <text width="96" height="64" lang="en_us">Forward
 Kick</text>
          </control>
          <control name="P2_BUTTON6">
             <text lang="en_us">Roundhouse Kick</text>
-            <text width="96" height="64" lang="en_us" color="#ffffff">Roundhouse
+            <text width="96" height="64" lang="en_us">Roundhouse
 Kick</text>
          </control>
          <control name="P2_JOYSTICK">

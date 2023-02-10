@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="nbamht" gamename="NBA Maximum Hangtime (ver L1.03 06/09/97)" numPlayers="4" alternating="0" cloneof="nbahangt">
+      <miscDetails>
+		</miscDetails>
+   </game>
+</ecl>

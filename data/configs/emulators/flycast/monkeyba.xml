@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<ecl>
+   <game romname="monkeyba" gamename="Monkey Ball" numPlayers="1" alternating="0">
+      <miscDetails> 
+  		</miscDetails>
+      <controls>
+         <control name="P1_JOYSTICK">
+            <text lang="en_us">Move</text>
+         </control>
+         <control name="P1_BTN_START">
+            <text lang="en_us">Start</text>
+         </control>
+      </controls>
+   </game>
+</ecl>
